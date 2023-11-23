@@ -1,7 +1,6 @@
 <?php
    include("../config/conexion.php");
    $conn = conectar();
-
    $idUsuario = $_POST['idUsuario'];
    $titulo = $_POST['titulo'];
    $mensaje = $_POST['mensaje'];
@@ -17,5 +16,4 @@
    } else {
     echo json_encode(['STATUS' => 'ERROR', 'MESSAGE' => 'Post no registrado']);
    }
-
 ?>
