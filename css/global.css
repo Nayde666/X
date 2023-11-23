@@ -1,0 +1,130 @@
+body{
+    font-family: 'Raleway', sans-serif;
+    background-color: black;
+    overflow-x: hidden;
+}
+.container{
+    margin-top: 10%;
+}
+
+.logo{
+    height: 110%; width: 120%;
+}
+
+.titulo{
+    font-weight: 800;
+    font-size: 90px;
+    color: white;
+}
+
+.subtitulo{
+    font-weight: 700;
+    font-size: 40px;
+    color: white;
+    margin-top: 6%; 
+    color: white;
+    margin-bottom: 5%;
+}
+
+.login{
+    background-color: white;
+    color: rgb(111, 107, 107);
+    font-weight: 600;
+    font-size: 17px;
+    padding: 15px;
+    padding-left: 75px;
+    padding-right: 75px;
+}
+.login2{
+    background-color: white;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    font-size: 17px;
+    padding: 15px;
+    padding-left: 84px;
+    padding-right: 84px;
+}
+
+.btn-registrar{
+    padding: 10px;
+    width: 43%;
+    color: white;
+    background-color: #1D9BF0;
+    font-weight: 600;
+    font-size: 20px;
+}
+.btn-registrarfinal{
+    padding: 10px;
+    width: 43%;
+    color: white;
+    background-color: #1D9BF0;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+hr{
+    color: azure; width: 43%;
+}
+
+p{
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(148, 148, 148);
+}
+
+.modal-content{
+    background-color: rgb(14, 13, 13); 
+    color: white;
+    width: 150%;
+}
+.modal-title{
+    color: white;
+    font-weight: 600;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.form-outline{
+    padding-left: 100px; 
+    width: 88%; 
+    margin-bottom: 30px;
+}
+
+.input{
+    height: 70px;
+    background: transparent;
+}
+
+.input::placeholder{
+    font-weight: 400;
+    font-size: 20px;
+    color: rgb(136, 136, 136);
+}
+.input:focus{
+    background-color: transparent;
+}
+
+input:invalid + button {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+h5{
+    font-size: 23px;
+    color: white;
+    font-weight: 600;
+}
+a{
+    color: #1D9BF0;
+    text-decoration: none;
+}
+
+.btn-iniciar{
+    padding: 10px;
+    width: 43%;
+    color: #1D9BF0;
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 20px;
+    border-color: aliceblue;
+}

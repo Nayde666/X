@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>UGblog</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./css/home.css">
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3">
+      <h4 id="userBlog"></h4>
+      <h5 id="userName"></h5>
+      <br>
+      <div class="input-group">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+      </div>
+    </div>
+    <!--NEW POST -->
+    <div class="col-sm-9">
+      <div class="mt-5">
+        <div class="form-block">
+          <textarea type="button" class="form-input" placeholder="Your text" name="mensaje" data-bs-toggle="modal" data-bs-target="#exampleModal"></textarea>
+          <form class="form-block" method="POST" action="./Backend/files/newPost.php">
+            <!--<input name="idUsuario" id="idUsuario" >-->
+            <div class="row">
+              <div class="col-xs-12 col-sm-6">
+              </div>
+              <div class="col-xs-12">					
+                <!--AQUI SE ABREEEE-->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h5 class="modal-title" id="exampleModalLabel">Borradores</h5>
+                      </div>
+                      <div class="modal-body">
+                        <!--FORMULARIO PARA UN POST-->
+                        <form class="form-block" method="POST" action="./Backend/files/newPost.php">
+                          <input name="idUsuario" id="idUsuario" >
+                          <div class="row">
+                            <div class="col-xs-12 col-sm-6">
+                            </div>
+                            <div class="col-xs-12">					
+                              <div class="form-group">
+                                <textarea class="form-input" required="" placeholder="Your text" name="mensaje"></textarea>
+                              </div>
+                              <button type="submit" class="btn btn-primary" >
+                                Guardar
+                              </button>				
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>				
+              </div>
+            </div>
+          </form>
+          <button type="submit" class="btn btn-primary" >
+            Guardar
+          </button>
+        </div>
+      </div>
+      <div id="postUsuarios">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--TEMPLATEEEE-->
+<template id="cardPost">
+  <div class="card" style="width: 100%; margin-top: 50px;">
+    <div class="card-body">
+      <h4 class="card-name" id="nameusu">Ola</h4>
+      <h5 class="card-title">Card title</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <p class="fecha">Fecha de Publicación</p>
+      <row>
+        <button> <i class="fa-regular fa-heart"></i> </button>
+        <button type="button" class="btn btn-primary btn-comment" data-bs-toggle="modal" data-bs-target="#commentModal" data-idpost="">
+          <i class="fa-regular fa-comment"></i> 
+        </button>
+      <!-- Modal -->
+        <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <h5 class="modal-title" id="exampleModalLabel" style="margin-left:75%;">Borradores</h5>
+              </div>
+            <!--FORMULARIO PARA COMENTARIO-->
+              <div class="modal-body">
+                <textarea class="commentText" name="mensaje" id="commentText" style="display: flex; width: 480px; height: 100px; border: none;"></textarea>
+                <div class="mt-5">
+                  <div class="form-block">
+                    <!--NEW COMMENT-->
+                    <div class="form-block">
+                      <form id="commentForm" class="form-block" method="POST" action="./Backend/files/newComent.php">
+                        <input name="idPost" id="commentPostId">
+                        <!--IDUSUARIO2-->
+                        <input name="idUsuario" id="idUsuario2">
+                        <textarea name="comentario" id="comentario" class="form-input" required="" placeholder="Your comment"></textarea>
+                        <button type="submit" class="btn btn-primary" id="btnComent" >
+                          Responder
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </row>
+      
+    </div>
+  </div>
+</template>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="./js/home.js"></script>
+</body>
+</html>
