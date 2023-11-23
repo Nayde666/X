@@ -14,12 +14,9 @@
   <div class="row content">
     <div class="col-sm-3">
       <h4 id="userBlog"></h4>
-      <ul>
-        <li class="active"><a href="#section1">Home</a></li>
-        <li><a href="#section2">Usuarios</a></li>
-      </ul><br>
+      <h5 id="userName"></h5>
+      <br>
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search Blog..">
         <span class="input-group-btn">
           <button class="btn btn-default" type="button">
             <span class="glyphicon glyphicon-search"></span>
@@ -81,10 +78,11 @@
   </div>
 </div>
 
+<!--TEMPLATEEEE-->
 <template id="cardPost">
-
   <div class="card" style="width: 100%; margin-top: 50px;">
     <div class="card-body">
+      <h4 class="card-name" id="nameusu">Ola</h4>
       <h5 class="card-title">Card title</h5>
       <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -111,6 +109,7 @@
                     <div class="form-block">
                       <form id="commentForm" class="form-block" method="POST" action="./Backend/files/newComent.php">
                         <input name="idPost" id="commentPostId">
+                        <!--IDUSUARIO2-->
                         <input name="idUsuario" id="idUsuario2">
                         <textarea name="comentario" id="comentario" class="form-input" required="" placeholder="Your comment"></textarea>
                         <button type="submit" class="btn btn-primary" id="btnComent" >
