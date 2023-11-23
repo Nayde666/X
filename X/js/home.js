@@ -1,6 +1,7 @@
 let loggedUser = {}
 
 const titulo = document.getElementById('userBlog')
+const nombre = document.getElementById('userName')
 const postContainer = document.getElementById('postUsuarios')
 const postCard = document.getElementById('cardPost').content
 const fragment = document.createDocumentFragment()
@@ -35,7 +36,7 @@ const loadPost = async () => {
     dibujaPosts(items.MESSAGE)
 }
 
-const dibujaPosts = posts => {
+const dibujaPosts = (posts)=> {
     postContainer.innerHTML = ''
     
     posts.forEach((item) => {
@@ -76,7 +77,8 @@ const loadUser  = () => {
             loggedUser = user.MESSAGE
             const inputIdUser = document.getElementById('idUsuario')
             inputIdUser.value = loggedUser.usuario
-            titulo.innerHTML = loggedUser.nombre + ' ' + loggedUser.apaterno + ' ' +'Blogs'
+            titulo.innerHTML = loggedUser.nombre + ' ' + loggedUser.apaterno
+            nombre.innerHTML = loggedUser.usuario
         })
     }
     console.log('@@@ usuario => ', usuario)
@@ -119,5 +121,6 @@ const loadUser2  = () => {
     }
     console.log('@@@ usuario => ', usuario)
 }
+
 
 
