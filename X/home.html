@@ -31,31 +31,52 @@
     <div class="col-sm-9">
       <div class="mt-5">
         <div class="form-block">
+          <textarea type="button" class="form-input" placeholder="Your text" name="mensaje" data-bs-toggle="modal" data-bs-target="#exampleModal"></textarea>
           <form class="form-block" method="POST" action="./Backend/files/newPost.php">
-            <input name="idUsuario" id="idUsuario" >
+            <!--<input name="idUsuario" id="idUsuario" >-->
             <div class="row">
               <div class="col-xs-12 col-sm-6">
-                <div class="form-group fl_icon">
-                  <!--<div class="icon"><i class="fa fa-user"></i></div>-->
-                  <input class="form-input" type="text" placeholder="PostTitle" name="titulo">
-                </div>
               </div>
               <div class="col-xs-12">					
-                <div class="form-group">
-                  <textarea class="form-input" required="" placeholder="Your text" name="mensaje"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" >
-                  Guardar
-                </button>				
+                <!--AQUI SE ABREEEE-->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h5 class="modal-title" id="exampleModalLabel">Borradores</h5>
+                      </div>
+                      <div class="modal-body">
+                        <!--FORMULARIO PARA UN POST-->
+                        <form class="form-block" method="POST" action="./Backend/files/newPost.php">
+                          <input name="idUsuario" id="idUsuario" >
+                          <div class="row">
+                            <div class="col-xs-12 col-sm-6">
+                            </div>
+                            <div class="col-xs-12">					
+                              <div class="form-group">
+                                <textarea class="form-input" required="" placeholder="Your text" name="mensaje"></textarea>
+                              </div>
+                              <button type="submit" class="btn btn-primary" >
+                                Guardar
+                              </button>				
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>				
               </div>
             </div>
           </form>
+          <button type="submit" class="btn btn-primary" >
+            Guardar
+          </button>
         </div>
       </div>
-
       <div id="postUsuarios">
       </div>
-      
     </div>
   </div>
 </div>
@@ -69,7 +90,6 @@
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       <p class="fecha">Fecha de Publicación</p>
       <row>
-        
         <button> <i class="fa-regular fa-heart"></i> </button>
         <button type="button" class="btn btn-primary btn-comment" data-bs-toggle="modal" data-bs-target="#commentModal" data-idpost="">
           <i class="fa-regular fa-comment"></i> 
@@ -89,9 +109,6 @@
                   <div class="form-block">
                     <!--NEW COMMENT-->
                     <div class="form-block">
-
-
-
                       <form id="commentForm" class="form-block" method="POST" action="./Backend/files/newComent.php">
                         <input name="idPost" id="commentPostId">
                         <input name="idUsuario" id="idUsuario2">
@@ -100,15 +117,9 @@
                           Responder
                         </button>
                       </form>
-
-
-                      
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="modal-footer">
-                ...
               </div>
             </div>
           </div>
