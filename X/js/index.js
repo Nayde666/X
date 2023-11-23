@@ -26,9 +26,9 @@ btnLogin.addEventListener('click', () => {
             const respuesta = await response.json()
             //console.log('@@@ respuesta',respuesta)
             if(respuesta.MESSAGE === 'No se encontro usuario'){
-                activaAlerta('El usuario no existe en la BD')
+                activaAlerta('Lo sentimos, no pudimos encontrar tu cuenta')
             } else if (respuesta.MESSAGE === 'Contraseñas no coinciden'){
-                activaAlerta('Las contraseñas no coinciden')
+                activaAlerta('Contraseña Incorrecta.')
             } else if (respuesta.MESSAGE === 'Success') {
                 //reedirigir a home
                 const usuario = respuesta.USUARIO['usuario']
@@ -44,8 +44,8 @@ btnLogin.addEventListener('click', () => {
 })
 
 const activaAlerta = mensaje => {
-    const alerta = document.getElementsByClassName('alert')
-    console.log('alerta', alerta)
+    const alerta = document.getElementsByClassName('alertaLogin')
+    //console.log('alerta', alerta)
     alerta[0].textContent = mensaje
     alerta[0].classList.remove('hide')
     alerta[0].classList.add('show')
