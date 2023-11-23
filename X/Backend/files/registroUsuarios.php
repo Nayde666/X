@@ -21,11 +21,11 @@
     if($result) {
       Header("Location: ../../index.html");
     } else {
-      Header("Location: ../../registrar.html?error=true");
+      Header("Location: ../../index.html?error=true");
     }
   } else {
     // Usuario existe
-    Header("Location: ../../registrar.html?existe=true");
+    Header("Location: ../../index.html?existe=true");
   }
   
  
