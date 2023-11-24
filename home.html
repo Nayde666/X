@@ -4,25 +4,51 @@
   <title>UGblog</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
+<<<<<<<< HEAD:home.html
   <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
   <link rel="stylesheet" href="./css/home.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+========
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./css/home.css">
+>>>>>>>> main:index.html
+=======
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./css/home.css">
+>>>>>>> main
 </head>
 <body>
 
 <div class="container-fluid">
   <div class="row content">
+<<<<<<< HEAD
+<<<<<<<< HEAD:home.html
     <div class="col-sm-3 sidenav">
       <h4 id="userBlog"></h4>
       <ul class="nav nav-pills nav-stacked">
+========
+    <div class="col-sm-3">
+      <h4 id="userBlog"></h4>
+      <ul>
+>>>>>>>> main:index.html
         <li class="active"><a href="#section1">Home</a></li>
         <li><a href="#section2">Usuarios</a></li>
       </ul><br>
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Search Blog..">
+=======
+    <div class="col-sm-3">
+      <h4 id="userBlog"></h4>
+      <h5 id="userName"></h5>
+      <br>
+      <div class="input-group">
+>>>>>>> main
         <span class="input-group-btn">
           <button class="btn btn-default" type="button">
             <span class="glyphicon glyphicon-search"></span>
@@ -34,8 +60,13 @@
     <div class="col-sm-9">
       <div class="mt-5">
         <div class="form-block">
+<<<<<<< HEAD
           <form class="form-block" method="POST" action="./Backend/files/newPost.php">
+<<<<<<<< HEAD:home.html
             <input name="idUsuario" id="idUsuario" type="hidden">
+========
+            <input name="idUsuario" id="idUsuario" >
+>>>>>>>> main:index.html
             <div class="row">
               <div class="col-xs-12 col-sm-6">
                 <div class="form-group fl_icon">
@@ -58,25 +89,105 @@
 
       <div id="postUsuarios">
       </div>
+<<<<<<<< HEAD:home.html
 
+========
+      
+>>>>>>>> main:index.html
+=======
+          <textarea type="button" class="form-input" placeholder="Your text" name="mensaje" data-bs-toggle="modal" data-bs-target="#exampleModal"></textarea>
+          <form class="form-block" method="POST" action="./Backend/files/newPost.php">
+            <!--<input name="idUsuario" id="idUsuario" >-->
+            <div class="row">
+              <div class="col-xs-12 col-sm-6">
+              </div>
+              <div class="col-xs-12">					
+                <!--AQUI SE ABREEEE-->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h5 class="modal-title" id="exampleModalLabel">Borradores</h5>
+                      </div>
+                      <div class="modal-body">
+                        <!--FORMULARIO PARA UN POST-->
+                        <form class="form-block" method="POST" action="./Backend/files/newPost.php">
+                          <input name="idUsuario" id="idUsuario" >
+                          <div class="row">
+                            <div class="col-xs-12 col-sm-6">
+                            </div>
+                            <div class="col-xs-12">					
+                              <div class="form-group">
+                                <textarea class="form-input" required="" placeholder="Your text" name="mensaje"></textarea>
+                              </div>
+                              <button type="submit" class="btn btn-primary" >
+                                Guardar
+                              </button>				
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>				
+              </div>
+            </div>
+          </form>
+          <button type="submit" class="btn btn-primary" >
+            Guardar
+          </button>
+        </div>
+      </div>
+      <div id="postUsuarios">
+      </div>
+>>>>>>> main
     </div>
   </div>
 </div>
 
+<<<<<<< HEAD
+<template id="cardPost">
+<<<<<<<< HEAD:home.html
+========
+
+>>>>>>>> main:index.html
+  <div class="card" style="width: 100%; margin-top: 50px;">
+    <div class="card-body">
+=======
+<!--TEMPLATEEEE-->
 <template id="cardPost">
   <div class="card" style="width: 100%; margin-top: 50px;">
     <div class="card-body">
+      <h4 class="card-name" id="nameusu">Ola</h4>
+>>>>>>> main
       <h5 class="card-title">Card title</h5>
       <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       <p class="fecha">Fecha de Publicación</p>
       <row>
+<<<<<<< HEAD
+<<<<<<<< HEAD:home.html
         <button> <i class="fa-regular fa-heart"></i> </button>
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
           <i class="fa-regular fa-comment"></i> 
         </button>
       <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+========
+        
+=======
+>>>>>>> main
+        <button> <i class="fa-regular fa-heart"></i> </button>
+        <button type="button" class="btn btn-primary btn-comment" data-bs-toggle="modal" data-bs-target="#commentModal" data-idpost="">
+          <i class="fa-regular fa-comment"></i> 
+        </button>
+      <!-- Modal -->
+        <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
+<<<<<<< HEAD
+>>>>>>>> main:index.html
+=======
+>>>>>>> main
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -85,10 +196,20 @@
               </div>
             <!--FORMULARIO PARA COMENTARIO-->
               <div class="modal-body">
+<<<<<<< HEAD
+<<<<<<<< HEAD:home.html
+========
+                <textarea class="commentText" name="mensaje" id="commentText" style="display: flex; width: 480px; height: 100px; border: none;"></textarea>
+>>>>>>>> main:index.html
+=======
+                <textarea class="commentText" name="mensaje" id="commentText" style="display: flex; width: 480px; height: 100px; border: none;"></textarea>
+>>>>>>> main
                 <div class="mt-5">
                   <div class="form-block">
                     <!--NEW COMMENT-->
                     <div class="form-block">
+<<<<<<< HEAD
+<<<<<<<< HEAD:home.html
                       <form class="form-block" method="POST" action="./Backend/files/newComent.php">
                         <input name="idPost" id="idPost">
                         <input name="idUsuario" id="idUsuario2">
@@ -97,13 +218,40 @@
                           Responder
                         </button>
                       </form>
+========
+
+
+
+                      <form id="commentForm" class="form-block" method="POST" action="./Backend/files/newComent.php">
+                        <input name="idPost" id="commentPostId">
+=======
+                      <form id="commentForm" class="form-block" method="POST" action="./Backend/files/newComent.php">
+                        <input name="idPost" id="commentPostId">
+                        <!--IDUSUARIO2-->
+>>>>>>> main
+                        <input name="idUsuario" id="idUsuario2">
+                        <textarea name="comentario" id="comentario" class="form-input" required="" placeholder="Your comment"></textarea>
+                        <button type="submit" class="btn btn-primary" id="btnComent" >
+                          Responder
+                        </button>
+                      </form>
+<<<<<<< HEAD
+
+
+                      
+>>>>>>>> main:index.html
+=======
+>>>>>>> main
                     </div>
                   </div>
                 </div>
               </div>
+<<<<<<< HEAD
               <div class="modal-footer">
                 ...
               </div>
+=======
+>>>>>>> main
             </div>
           </div>
         </div>
@@ -117,4 +265,12 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="./js/home.js"></script>
 </body>
+<<<<<<< HEAD
+<<<<<<<< HEAD:home.html
 </html>
+========
+</html>
+>>>>>>>> main:index.html
+=======
+</html>
+>>>>>>> main
