@@ -12,8 +12,4 @@
     } else {
         echo json_encode(['STATUS' => 'ERROR', 'MESSAGE' => 'No se encontro un usuario']);
     }
-<<<<<<< HEAD
 ?>
-=======
-?>
->>>>>>> main
