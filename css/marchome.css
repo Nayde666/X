@@ -62,10 +62,6 @@ textarea:focus, input:focus, input:active{
     font-weight: bold;
 }
 
-main .main--button{
-    width: 100%;
-}
-
 .search--bar{ 
     position: relative;
     width: 90%;
