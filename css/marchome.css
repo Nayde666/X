@@ -13,8 +13,18 @@ body{
     color: var(--dark-bgcolor);
 }
 
-input:focus, input:active{
+textarea:focus, input:focus, input:active{
     outline: none;
+}
+
+.tweet--area{
+    padding-left: 0;
+    width: 100%;
+    background-color: var(--light-bgcolor);
+}
+
+.tweet--icons{
+    color: var(--main-color);
 }
 
 .left--sidebar, .right--sidebar, .mid--topbar{
@@ -38,6 +48,11 @@ input:focus, input:active{
     font-weight: bold;
 }
 
+.profile--pic{
+    width: 56px; 
+    height: 56px;
+}
+
 .main--button{
     padding: 12px 6px;
     border-radius: 50px;
@@ -45,6 +60,10 @@ input:focus, input:active{
     color: var(--light-bgcolor);
     font-size: 14px;
     font-weight: bold;
+}
+
+main .main--button{
+    width: 100%;
 }
 
 .search--bar{ 
