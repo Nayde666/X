@@ -2,12 +2,12 @@
    include("../config/conexion.php");
    $conn = conectar();
    $idUsuario = $_POST['idUsuario'];
-   $titulo = $_POST['titulo'];
    $mensaje = $_POST['mensaje'];
    $reaccion = 0;
    $fecha = date("Y-m-d");
+   $nombre = $_POST['nombre'];
 
-   $queryInsert = "INSERT INTO posts VALUES(null,'$idUsuario', '$titulo', '$mensaje', '$fecha', '$reaccion' )";
+   $queryInsert = "INSERT INTO posts VALUES(null,'$idUsuario', '$mensaje', '$fecha', '$reaccion', '$nombre')";
    $result = mysqli_query($conn, $queryInsert);
 
    if($result){
