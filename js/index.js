@@ -44,8 +44,7 @@ btnLogin.addEventListener('click', () => {
 })
 
 const activaAlerta = mensaje => {
-    const alerta = document.getElementsByClassName('alertaLogin')
-    //console.log('alerta', alerta)
+
     alerta[0].textContent = mensaje
     alerta[0].classList.remove('hide')
     alerta[0].classList.add('show')
