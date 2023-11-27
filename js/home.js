@@ -106,6 +106,7 @@ const loadUser2  = () => {
             console.log('Valor de loggedUser2.usuario:', loggedUser2.usuario);
             // Obtener todos los elementos con el id 'idUsuario2'
             const inputIdUsuarios = document.querySelectorAll('#idUsuario2');
+            console.log(inputIdUsuarios)
             if (inputIdUsuarios.length > 0){
                 // asignación del valores
                 console.log('Numero de elementos encontrados:', inputIdUsuarios.length);
@@ -113,7 +114,7 @@ const loadUser2  = () => {
                 inputIdUser.value = loggedUser2.usuario;
             });
             } else {
-                console.error('No se encontraron elementos con el id "idUsuario2"');
+                console.error('No se encontraron elementos con el id #idUsuario2');
             }  
             const inputIdUser = document.getElementById('idUsuario2')
             inputIdUser.value = loggedUser2.usuario
