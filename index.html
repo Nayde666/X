@@ -41,7 +41,7 @@
             Crear Cuenta
           </button>
           <!-- Modal registrar-->
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="width: 90%;">
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="width: 90%;" >
             <div class="modal-dialog" >
               <div class="modal-content">
                 <div class="modal-body">
@@ -77,18 +77,20 @@
                         Registrarse
                       </button>
                     </div>
+                     <!--ALERT USUARIO YA EXISTENTE-->
+                    <div class="alert alert-dismissible hide fade alert-warning d-flex align-items-center" role="alert" type="hidden">  
+                      <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
+                          <use xlink:href="#exclamation-triangle-fill"/>
+                      </svg>  
+                      <div> El usuario ya existe en el Sistema </div>
+                    </div>
                   </form>
-                  <!--ALERT USUARIO YA EXISTENTE-->
-                  <div class="alert alert-dismissible show fade alert-warning d-flex align-items-center" role="alert">  
-                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
-                      <use xlink:href="#exclamation-triangle-fill"/>
-                    </svg>  
-                    <div> El usuario ya existe en el Sistema </div>
-                  </div>
+
                 </div>
               </div>
             </div>
           </div>
+         
           <br />
           <br />
           <!--Terminos y condiciones-->
@@ -110,14 +112,15 @@
           <br>
           <!-- Modal Iniciar Sesion -->
           <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="width: 90%;">
-            <div class="modal-dialog" id="Modal2">
-              <div class="modal-content" >
-                <div class="modal-header" >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="font-size: large; margin-left: -10px;"><i class="fa-solid fa-xmark" style="color: #ffffff;"></i></button>
                   <img src="./src/logo2.png" width="70px" height="70px" style="margin-right: 320px;">
                 </div>
                 <div class="modal-body">
                   <h5 class="modal-title" id="exampleModalLabel" style="padding-left: 220px;">Inicia Sesión en X</h5>
+                 
                   <form>
                     <br />
                     <span class="login rounded-pill" style="margin-left: 180px;">
@@ -134,29 +137,27 @@
                     <br />
                     <br />
                     <br />
-                    <div class="modal-content-scroll">
                     <div class="form-outline mb-4">
                       <input type="text" id="usuario" class="form-control form-control-lg input" placeholder="Correo electronico o nombre de usuario" style="width: 390px; margin-left: 75px;"/>
                     </div>
                     <div class="form-outline mb-4">
                       <input type="password" id="password" class="form-control form-control-lg input" placeholder="Contraseña" style="width: 390px; margin-left: 75px;"/>
                     </div>
-                      <button id="btnLogin" class="btn btn-info btn-lg btn-block rounded-pill" type="button" style="background-color: #ffffff; width: 390px; margin-left: 170px; font-weight: 600;">Siguiente</button>
                       <br />
                       <br />
-                      <button id="btnLogin" class="btn btn-info btn-lg btn-block rounded-pill" type="button" style="background-color: transparent; width: 390px; margin-left: 170px; font-weight: 600; color: #ffffff; border-color: #ffffff;">¿Olvidaste la contraseña?</button>
-                      <!--ALERTAAAAA-->
-
-                      <div class="alert alert-dismissible hide fade alert-warning d-flex align-items-center" role="alert">  
-                        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
-                          <use xlink:href="#exclamation-triangle-fill"/>
-                        </svg>  
-                        <div>
-                          Faltan Campos 
+                      <div>
+                        <button id="btnLogin" class="btn btn-info btn-lg btn-block rounded-pill" type="button" style="background-color: #ffffff; width: 390px; margin-left: 170px; font-weight: 600;">Login</button>
+                        <br />
+                        <!--ALERTAAAAA-->
+                        <div style="margin-top: 20px;" class="alertaLogin alert alert-dismissible hide fade alert-warning d-flex align-items-center" role="alert" id="alertaLogin">  
+                          <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
+                            <use xlink:href="#exclamation-triangle-fill"/>
+                          </svg>  
+                          <div>   Faltan campos </div>
                         </div>
-                      </div> 
-                    </div>
+                      </div>
                   </form>
+                  
                 </div>
               </div>
             </div>
@@ -176,7 +177,7 @@
               <!--Grid column-->
               <section class="mb-4">
                 <a href="#!" class="text-white">Información</a>
-                <a href="#!" class="text-white" >Descarga la app de X</a>
+                <a href="#!" class="text-white">Descarga la app de X</a>
                 <a href="#!" class="text-white">Centro de ayuda</a>
                 <a href="#!" class="text-white">Condiciones de Servicio</a>
                 <a href="#!" class="text-white">Política de Privacidad</a>
@@ -186,20 +187,8 @@
                 <a href="#!" class="text-white">Blog</a>
                 <a href="#!" class="text-white">Estado</a>
                 <a href="#!" class="text-white">Empleos</a>
-                <a href="#!" class="text-white">Recursos para marcas</a>
               </section>
             </div>
-            <div class="row-1">
-              <section>
-                <a href="#!" class="text-white">Publicidad</a>
-                <a href="#!" class="text-white">X para empresas</a>
-                <a href="#!" class="text-white">Desarrolladores</a>
-                <a href="#!" class="text-white">Guía</a>
-                <a href="#!" class="text-white">Configuración</a>
-                <a href="#!" class="text-white">© 2023 X Corp.</a>
-              </section>
-            </div>
-            
 
           </section>
           <br />
