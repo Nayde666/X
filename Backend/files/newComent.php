@@ -14,6 +14,7 @@
     echo json_encode(['STATUS' => 'SUCCESS', 'MESSAGE' => 'Comentario registrado']);
     Header("Location: ../../home.html?usuario=".$idUsuario);
    } else {
+      
     echo json_encode(['STATUS' => 'ERROR', 'MESSAGE' => 'Comentario no registrado']);
    }
 ?>
