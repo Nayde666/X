@@ -1,7 +1,9 @@
 <?php
   include("../config/conexion.php");
   $conn = conectar();
-  $querySelect = "SELECT posts.*, COUNT(comentario.idComentario) as totalComentarios FROM posts LEFT JOIN comentario ON posts.idPost = comentario.idPost GROUP BY posts.idPost";
+  $querySelect = "SELECT posts.*, COUNT(comentario.idComentario) 
+                  as totalComentarios FROM posts 
+                  LEFT JOIN comentario ON posts.idPost = comentario.idPost GROUP BY posts.idPost";
   $posts = mysqli_query($conn, $querySelect);
   $postsArray = [];
   
