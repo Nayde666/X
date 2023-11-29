@@ -19,21 +19,29 @@ postContainer.addEventListener('click', async (e) => {
       const idPost = btnComment.getAttribute('data-idpost')
       document.getElementById('commentPostId').value = idPost
     
+      const nombre = btnComment.getAttribute('data-nombreusuario')
+      document.getElementById('nombreusuariopost').textContent = nombre
+
+      const idusuariopost = btnComment.getAttribute('data-idUsuario')
+      document.getElementById('idusuariopost').textContent = idusuariopost
+
+      const mensaje = btnComment.getAttribute('data-mensaje')
+      document.getElementById('contenidodelpost').textContent = mensaje
+
 	  const idUsuarioComment = document.getElementById('idUsuario-Comment')
 	  idUsuarioComment.value = loggedUser.usuario
 
       const inputnombre = document.getElementById('nombreUsuario-Comment')
       inputnombre.value = loggedUser.nombre
-
     }
 
     const buttonloadComment = e.target.closest('.buttonloadComment')
     if (buttonloadComment){
         const idPost = buttonloadComment.getAttribute('data-idpost')
-        const urlParams = new URLSearchParams(window.location.search);
-        const usuario = urlParams.get('usuario');
-        const nuevaURL = `/x/loadcomment.html?usuario=${usuario}&idPost=${idPost}`;
-        window.location.replace(nuevaURL);
+        const urlParams = new URLSearchParams(window.location.search)
+        const usuario = urlParams.get('usuario')
+        const nuevaURL = `/x/loadcomment.html?usuario=${usuario}&idPost=${idPost}`
+        window.location.replace(nuevaURL)
     }
 })
 
@@ -53,21 +61,15 @@ const dibujaPosts = (posts)=> {
         postCard.querySelector('.card-text').textContent = item.mensaje
         postCard.querySelector('.fecha').textContent = item.fecha
 
-        const posttexto= postCard.querySelector('.contenidodelpost')
-        posttexto.textContent = item.mensaje
-
-        const postnombre= postCard.querySelector('.nombreusuariopost')
-        postnombre.textContent = item.nombre
-
-        const postidusuario= postCard.querySelector('.idusuariopost')
-        postidusuario.textContent = item.idUsuario
-
         const comentariosParrafo = postCard.querySelector('.comentarios-parrafo')
         comentariosParrafo.textContent = `Comentarios: ${item.totalComentarios}`
         const clone = postCard.cloneNode(true)
 
+        
         const btnComment = clone.querySelector('.btn-comment')
         btnComment.setAttribute('data-idpost', item.idPost)
+        btnComment.setAttribute('data-nombreusuario', item.nombre)
+        btnComment.setAttribute('data-idUsuario', item.idUsuario)
         btnComment.setAttribute('data-mensaje', item.mensaje)
         
         const buttonloadComment = clone.querySelector('.buttonloadComment')
@@ -109,6 +111,8 @@ const loadUser  = () => {
             nombre.innerHTML = loggedUser.usuario
         })
     }
+    console.log('@@@ usuario => ', usuario)
+}
     console.log('@@@ usuario => ', usuario)
 }
 
