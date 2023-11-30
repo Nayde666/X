@@ -1,126 +1,247 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <title>UGblog</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./css/home.css">
-</head>
-<body>
-
-<div class="container-fluid">
-  <div class="row content">
-    <div class="col-sm-3">
-      <h4 id="userBlog"></h4>
-      <ul>
-        <li class="active"><a href="#section1">Home</a></li>
-        <li><a href="#section2">Usuarios</a></li>
-      </ul><br>
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search Blog..">
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="button">
-            <span class="glyphicon glyphicon-search"></span>
-          </button>
-        </span>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700;800&family=Raleway:wght@100;200;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./css/global.css">
+    <title>X. Es lo que está pasando</title>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-5" style="height: 100%; margin-top: 6%;">
+        <img src="./src/x.jpg" class="logo">
       </div>
-    </div>
-    <!--NEW POST -->
-    <div class="col-sm-9">
-      <div class="mt-5">
-        <div class="form-block">
-          <form class="form-block" method="POST" action="./Backend/files/newPost.php">
-            <input name="idUsuario" id="idUsuario" >
-            <div class="row">
-              <div class="col-xs-12 col-sm-6">
-                <div class="form-group fl_icon">
-                  <!--<div class="icon"><i class="fa fa-user"></i></div>-->
-                  <input class="form-input" type="text" placeholder="PostTitle" name="titulo">
+      <div class="col-7" style="height: block;">
+        <div class="container">
+          <h1 class="titulo">Lo que está </h1>
+          <h1 class="titulo">pasando ahora</h1>
+          <h3 class="subtitulo">Únete hoy</h3>
+          <span class="login rounded-pill">
+            <i class="bi bi-google"></i>
+            Inicia sesión con Google 
+          </span>
+          <br />
+          <br />
+          <br />
+          <span class="login2 rounded-pill">
+            <i class="bi bi-apple"></i>
+            Registrarse con Apple
+          </span>
+          <br />
+          <br />
+          <hr >  
+          <!-- Boton registrar-->
+          <button type="button" class="btn btn-registrar rounded-pill" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Crear Cuenta
+          </button>
+          <!-- Modal registrar-->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="width: 90%;" >
+            <div class="modal-dialog" >
+              <div class="modal-content">
+                <div class="modal-body">
+                  <row>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="font-size: large;"><i class="fa-solid fa-xmark" style="color: #ffffff;"></i></button>
+                    <h5 class="modal-title" id="exampleModalLabel" style="padding-left: 90px;">Crea tu cuenta</h5>
+                  </row>
+                  <form action="./Backend/files/registroUsuarios.php" method="post">
+                    <div class="row">
+                        <br>
+                        
+                        <div class="form-outline">
+                          <input type="text" class="form-control input" name="nombre" placeholder="Nombre" id="input" required oninput="validarInput()"/>
+                        </div>
+
+                        <div class="form-outline">
+                          <input type="text" class="form-control input" name="apaterno" placeholder="Apellido Paterno" id="input2" required oninput="validarInput()"/>
+                        </div>
+
+                        <div class="form-outline">
+                          <input type="text" class="form-control input" name="amaterno" placeholder="Apellido Materno" id="input3" required oninput="validarInput()"/>
+                        </div>
+                        <div class="form-outline">
+                          <input type="text" class="form-control input" name="usuario" placeholder="Usuario" id="input4" required oninput="validarInput()"/>
+                        </div>
+                        <div class="form-outline">
+                          <input type="password" class="form-control input" name="password" placeholder="Contraseña" id="input5" required oninput="validarInput()"/>
+                        </div>
+                    </div> 
+                    <div class="modal-footer" style="margin-right: 10px;">
+                      <!-- Submit button -->
+                      <button  style="height: 70px; width: 80%; margin-right: 10%;" type="submit" class="btn btn-registrarfinal rounded-pill" id="boton" disabled>
+                        Registrarse
+                      </button>
+                    </div>
+                     <!--ALERT USUARIO YA EXISTENTE-->
+                    <div class="alert alert-dismissible hide fade alert-warning d-flex align-items-center" role="alert" type="hidden">  
+                      <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
+                          <use xlink:href="#exclamation-triangle-fill"/>
+                      </svg>  
+                      <div> El usuario ya existe en el Sistema </div>
+                    </div>
+                  </form>
+
                 </div>
-              </div>
-              <div class="col-xs-12">					
-                <div class="form-group">
-                  <textarea class="form-input" required="" placeholder="Your text" name="mensaje"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" >
-                  Guardar
-                </button>				
               </div>
             </div>
-          </form>
-        </div>
-      </div>
-
-      <div id="postUsuarios">
-      </div>
-      
-    </div>
-  </div>
-</div>
-
-<template id="cardPost">
-
-  <div class="card" style="width: 100%; margin-top: 50px;">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <p class="fecha">Fecha de Publicación</p>
-      <row>
-        
-        <button> <i class="fa-regular fa-heart"></i> </button>
-        <button type="button" class="btn btn-primary btn-comment" data-bs-toggle="modal" data-bs-target="#commentModal" data-idpost="">
-          <i class="fa-regular fa-comment"></i> 
-        </button>
-      <!-- Modal -->
-        <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  <h5 class="modal-title" id="exampleModalLabel" style="margin-left:75%;">Borradores</h5>
-              </div>
-            <!--FORMULARIO PARA COMENTARIO-->
-              <div class="modal-body">
-                <textarea class="commentText" name="mensaje" id="commentText" style="display: flex; width: 480px; height: 100px; border: none;"></textarea>
-                <div class="mt-5">
-                  <div class="form-block">
-                    <!--NEW COMMENT-->
-                    <div class="form-block">
-
-
-
-                      <form id="commentForm" class="form-block" method="POST" action="./Backend/files/newComent.php">
-                        <input name="idPost" id="commentPostId">
-                        <input name="idUsuario" id="idUsuario2">
-                        <textarea name="comentario" id="comentario" class="form-input" required="" placeholder="Your comment"></textarea>
-                        <button type="submit" class="btn btn-primary" id="btnComent" >
-                          Responder
-                        </button>
-                      </form>
-
-
-                      
-                    </div>
-                  </div>
+          </div>
+         
+          <br />
+          <br />
+          <!--Terminos y condiciones-->
+          <p>Al registrarte, aceptas los 
+            <a href="https://twitter.com/es/tos">Términos de Servicio</a> 
+            y la <a href="https://twitter.com/es/privacy"> Política <br> de privacidad</a>, 
+            incluida la política de 
+            <a href="https://help.twitter.com/es/rules-and-policies/x-cookies">Uso de Cookies.</a>
+          </p>
+          <br />
+          <br />
+          <h5>¿Ya tienes una cuenta?</h5>
+          <br />
+          <!-- Boton Iniciar Sesion-->
+          <button  type="button" class="btn btn-iniciar rounded-pill" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+            Iniciar Sesión
+          </button>
+          <br>
+          <br>
+          <!-- Modal Iniciar Sesion -->
+          <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="width: 90%;">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="font-size: large; margin-left: -10px;"><i class="fa-solid fa-xmark" style="color: #ffffff;"></i></button>
+                  <img src="./src/logo2.png" width="70px" height="70px" style="margin-right: 320px;">
                 </div>
-              </div>
-              <div class="modal-footer">
-                ...
+                <div class="modal-body">
+                  <h5 class="modal-title" id="exampleModalLabel" style="padding-left: 220px;">Inicia Sesión en X</h5>
+                 
+                  <form>
+                    <br />
+                    <span class="login rounded-pill" style="margin-left: 180px;">
+                      <i class="bi bi-google"></i>
+                      Inicia sesión con Google 
+                    </span>
+                    <br />
+                    <br />
+                    <br />
+                    <span class="login2 rounded-pill" style="margin-left: 180px;">
+                      <i class="bi bi-apple"></i>
+                      Registrarse con Apple
+                    </span>
+                    <br />
+                    <br />
+                    <br />
+                    <div class="form-outline mb-4">
+                      <input type="text" id="usuario" class="form-control form-control-lg input" placeholder="Correo electronico o nombre de usuario" style="width: 390px; margin-left: 75px;"/>
+                    </div>
+                    <div class="form-outline mb-4">
+                      <input type="password" id="password" class="form-control form-control-lg input" placeholder="Contraseña" style="width: 390px; margin-left: 75px;"/>
+                    </div>
+                      <br />
+                      <br />
+                      <div>
+                        <button id="btnLogin" class="btn btn-info btn-lg btn-block rounded-pill" type="button" style="background-color: #ffffff; width: 390px; margin-left: 170px; font-weight: 600;">Login</button>
+                        <br />
+                        <!--ALERTAAAAA-->
+                        <div style="margin-top: 20px;" class="alertaLogin alert alert-dismissible hide fade alert-warning d-flex align-items-center" role="alert" id="alertaLogin">  
+                          <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
+                            <use xlink:href="#exclamation-triangle-fill"/>
+                          </svg>  
+                          <div>   Faltan campos </div>
+                        </div>
+                      </div>
+                  </form>
+                  
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </row>
-      
+      </div>
+      <!-- Footer -->
+      <footer class=" text-center text-white">
+          <br />
+          <br />
+          <br />
+          <br />
+          <!-- Links  -->
+          <section class="">
+            <!--Grid row-->
+            <div class="row">
+              <!--Grid column-->
+              <section class="mb-4">
+                <a href="#!" class="text-white">Información</a>
+                <a href="#!" class="text-white">Descarga la app de X</a>
+                <a href="#!" class="text-white">Centro de ayuda</a>
+                <a href="#!" class="text-white">Condiciones de Servicio</a>
+                <a href="#!" class="text-white">Política de Privacidad</a>
+                <a href="#!" class="text-white">Política de cookies</a>
+                <a href="#!" class="text-white">Accesibilidad</a>
+                <a href="#!" class="text-white">Información de anuncios</a>
+                <a href="#!" class="text-white">Blog</a>
+                <a href="#!" class="text-white">Estado</a>
+                <a href="#!" class="text-white">Empleos</a>
+              </section>
+            </div>
+
+          </section>
+          <br />
+          <br />
+          <br />
+          <br />
+          <h4>Sobre Nosotros</h4>
+          <!-- Sobre Nosotros -->
+          <section class="mb-4">
+            <!-- Github -->
+            <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/Nayde666" role="button"
+            ><i class="fab fa-github"></i
+            ></a>
+            <!-- Github -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-github"></i
+            ></a>
+            <!-- Github -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-github"></i
+            ></a>
+        </section>
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2023 Aplicaciones de Internet
+        </div>
+
+      </footer>
     </div>
-  </div>
-</template>
 
+    
+    <script>
+      function validarInput() {
+      var inputTexto = document.getElementById('input');
+      var inputTexto2 = document.getElementById('input2');
+      var inputTexto3 = document.getElementById('input3');
+      var inputTexto4 = document.getElementById('input4');
+      var inputTexto5 = document.getElementById('input5');
+      var boton = document.getElementById('boton');
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="./js/home.js"></script>
-</body>
+      if (inputTexto.value.trim() !== '' & inputTexto2.value.trim() !== '' & inputTexto3.value.trim() !== '' & inputTexto4.value.trim() !== '' & inputTexto5.value.trim() !== '') {
+        // Si el input tiene texto, habilitar el botón
+        boton.disabled = false;
+      } else {
+        // Si el input no tiene texto, deshabilitar el botón
+        boton.disabled = true;
+      }
+    }
+    </script>
+
+    <script src="./js/registrar.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
 </html>
