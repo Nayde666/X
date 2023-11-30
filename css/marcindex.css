@@ -1,0 +1,139 @@
+:root{
+    --main-color: #1DA1F2;
+    --secondary-color: #0084B4;
+    --light-bgcolor: #F5F8FA;
+
+    --gray-bgcolor: #E1E8ED;
+    --dark-bgcolor: #14171A; 
+    --gray-txtcolor: #657786;
+}
+
+body{
+    color: var(--dark-bgcolor);
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--light-bgcolor);
+    overflow-x: hidden;
+}
+
+h1, h3{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800 !important;
+}
+
+h3{
+    font-size: 2rem;
+}
+
+
+.btn{
+    margin: 0.5rem 0;
+    border-radius: 50rem;
+    padding: 8px 0px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+
+.main--button{
+    border: none;
+    color: var(--light-bgcolor);
+    background-color: var(--main-color);
+}
+
+.main--button:hover{
+    border: none;
+    background-color: var(--secondary-color);
+}
+
+.signin--button, .login--button{
+    border: 0.14rem solid var(--gray-bgcolor);
+    background-color: var(--light-bgcolor);
+    color: var(--dark-bgcolor);
+}
+
+.signin--button:hover{
+    border-color: var(--gray-bgcolor);
+    background-color: var(--gray-bgcolor);
+    color: var(--dark-bgcolor);
+}
+
+.signin--button:first-of-type{
+    color: var(--gray-txtcolor);
+}
+
+.login--button{
+    color: var(--main-color);
+}
+
+.login--button:hover{
+    border-color: var(--gray-bgcolor);
+    color: var(--main-color);
+    background-color: rgba(29, 161, 242, 0.1);
+}
+
+.secondary--button{
+    color: var(--light-bgcolor);
+    background-color: var(--dark-bgcolor);
+}
+
+.signin--block, .login--block{
+    width: 20rem;
+}
+
+.signin--block p{
+    font-size: 0.75rem;
+    color: var(--gray-txtcolor);
+}
+
+.signin--block hr,
+.login--container hr{
+    margin: 0.25rem;
+    border: 0;
+    height: 1px;
+    background-color: var(--gray-txtcolor);
+}
+
+.signin--block .separator,
+.login--container .separator{
+    display: block;
+    margin: auto;
+    margin-top: -1rem;
+    width: 2.5rem;
+    font-size: 1rem;
+    background: var(--light-bgcolor);
+}
+
+
+/*Estilos para modales*/
+.form-control{
+    background-color: var(--light-bgcolor);
+}
+
+.modal-content{
+    background-color: var(--light-bgcolor);
+}
+
+.modal-body .logo{
+    display: block;
+    margin: 0 auto;
+    width: 64px; 
+    height: 50px;
+}
+
+.modal-header .btn-close{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    margin-top: 0;
+}
+
+.register--container, 
+.login--container{
+    margin-top: 1rem;
+    padding: 0 4rem;
+}
+
+.form--container{
+    margin-top: 1rem;
+    padding: 0;
+}
