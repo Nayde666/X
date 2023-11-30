@@ -11,12 +11,12 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
         
         <link rel="stylesheet" href="./css/marchome.css"/>
-        <title>X</title>
+        <title>X: Home</title>
     </head>
     <body>
         <div class="container-fluid">
             <!--Nav bar-->
-            <nav class="bg-light fixed-bottom d-sm-none">
+            <nav class="bg-light fixed-bottom d-sm-none bottom--navbar">
                 <div class="container-fluid">
                     <div class="row h-50 align-items-center">
                         <div class="col-3 d-flex justify-content-center">
@@ -45,39 +45,39 @@
                     </div>
                     <!--Left Navbar-->
                     <nav class="nav flex-column mt-3 text-sm-end text-md-start fs-6">
-                        <a href="" class="nav-link ps-lg-5 text-dark">
+                        <a href="" class="nav-link ps-lg-5">
                             <i class="bi bi-house-door-fill"></i>
                             <span class="d-none d-lg-inline ps-3 fw-bold">Inicio</span>
                         </a>
-                        <a href="" class="nav-link ps-lg-5 text-dark">
+                        <a href="" class="nav-link ps-lg-5">
                             <i class="bi bi-hash"></i>
                             <span class="d-none d-lg-inline ps-3">Explorar</span>
                         </a>
-                        <a href="" class="nav-link ps-lg-5 text-dark">
+                        <a href="" class="nav-link ps-lg-5">
                             <i class="bi bi-bell"></i>
                             <span class="d-none d-lg-inline ps-3">Notificaciones</span>
                         </a>
-                        <a href="" class="nav-link ps-lg-5 text-dark">
+                        <a href="" class="nav-link ps-lg-5">
                             <i class="bi bi-envelope"></i>
                             <span class="d-none d-lg-inline ps-3">Mensajes</span>
                         </a>
-                        <a href="" class="nav-link ps-lg-5 text-dark">
+                        <a href="" class="nav-link ps-lg-5">
                             <i class="bi bi-file-text"></i>
                             <span class="d-none d-lg-inline ps-3">Listas</span>
                         </a>
-                        <a href="" class="nav-link ps-lg-5 text-dark">
+                        <a href="" class="nav-link ps-lg-5">
                             <i class="bi bi-bookmark"></i>
                             <span class="d-none d-lg-inline ps-3">Guardados</span>
                         </a>
-                        <a href="" class="nav-link ps-lg-5 text-dark">
+                        <a href="" class="nav-link ps-lg-5">
                             <i class="bi bi-twitter-x"></i>
                             <span class="d-none d-lg-inline ps-3">Premium</span>
                         </a>
-                        <a href="" class="nav-link ps-lg-5 text-dark">
+                        <a href="" class="nav-link ps-lg-5">
                             <i class="bi bi-person"></i>
                             <span class="d-none d-lg-inline ps-3">Perfil</span>
                         </a>
-                        <a href="" class="nav-link ps-lg-5 text-dark">
+                        <a href="" class="nav-link ps-lg-5">
                             <i class="bi bi-three-dots"></i>
                             <span class="d-none d-lg-inline ps-3">Más opciones</span>
                         </a>
@@ -85,12 +85,12 @@
                     <div class="d-none ps-lg-5 d-lg-grid mt-4">
                         <button class="btn main--button">Postear</button>
                     </div>
-                    <div class="row d-none d-lg-flex justify-content-between align-items-center mt-5 ps-lg-5">
+
+                    <div class="row d-none d-lg-flex justify-content-between align-items-center mt-5 ps-lg-5 py-2 account--info">
                         <div class="col-lg-2">
                             <img src="./res/img/profile_sample.jpg" alt="" class="rounded-circle profile--pic">
-                            
                         </div>
-                        <div class="col-lg-10 ps-5">
+                        <div class="col-lg-7 ps-5">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <span class="fw-bold">NayNay</span>
@@ -100,7 +100,17 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-lg-3 text-center">
+                            <div class="dropup">
+                                <i class="bi bi-three-dots dropdown-toggle account--options" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                   <li><a href="" class="dropdown-item">Cerrar sesión</a></li> 
+                                   <li><a href="" class="dropdown-item">Vincular otra cuenta</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
+
                 </header>
                 
                 <!--Main section-->
@@ -150,9 +160,9 @@
                                     <div class="row d-flex justify-content-between align-items-center">
                                         <div class="col-10 pt-2">
                                             <p>
-                                                <span class="fw-bold">NayNay </span>
+                                                <span class="fw-bold">Pedacito </span>
                                                 <span class="text--tweet-info">
-                                                    @nay6687<i class="bi bi-dot"></i>23h
+                                                    @Cod3Break3r9<i class="bi bi-dot"></i>23h
                                                 </span>
                                             </p>
                                         </div>
@@ -163,7 +173,7 @@
                                         </div>
                                     </div>
                                     <div class="col ">
-                                        <p>Ya merito queda el front, tilina</p>
+                                        <p>Te amo</p>
                                         <div class="row pb-2 text--tweet-info">
                                             <div class="col"><span><i class="bi bi-chat"></i></span></div>
                                             <div class="col"><i class="fa-solid fa-retweet"></i></div>
@@ -208,8 +218,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                
                             </div>
+                            
                         </div>
                     </section>
                     
@@ -230,7 +240,7 @@
                                 recibir un pago de cuota de ingresos por anuncios
                             </p>
                             <div class="d-grid mt-4 mb-2">
-                                <button class="btn container--button">
+                                <button class="btn secondary--button">
                                     <a class="text-decoration-none text-white" href="https://help.twitter.com/es/using-x/x-premium">Suscribirse</a>
                                 </button>
                             </div>
