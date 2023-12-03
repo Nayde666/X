@@ -20,6 +20,7 @@ textarea:focus, input:focus, input:active{
 }
 
 .tweet--area{
+    resize: none;
     padding-left: 0;
     width: 100%;
     background-color: var(--light-bgcolor);
@@ -42,7 +43,7 @@ textarea:focus, input:focus, input:active{
 
 .nav-link:hover, 
 .bottom--navbar i:hover, 
-.text--tweet-info i:hover{
+.tweet--content .text--tweet-info i:hover{
     cursor: pointer;
     color: var(--main-color);
 }
@@ -62,6 +63,7 @@ textarea:focus, input:focus, input:active{
 }
 
 .profile--pic{
+    border-radius: 50%;
     width: 56px; 
     height: 56px;
 }
@@ -79,7 +81,17 @@ textarea:focus, input:focus, input:active{
     font-size: 14px;
 }
 
-.main--button:hover{
+.tweet--circle-button{
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: var(--light-bgcolor);
+    background-color: var(--main-color);
+    width: 56px;
+    height: 56px;
+}
+
+.main--button:hover,
+.tweet--circle-button:hover{
     color: var(--light-bgcolor);
     background-color: var(--secondary-color);
 }
@@ -150,4 +162,15 @@ textarea:focus, input:focus, input:active{
 
 .account--options.dropdown-toggle::after{
     display: none;
+}
+
+.modal-content{
+    background-color: var(--light-bgcolor);
+}
+
+@media(max-width: 720px){
+    .tweet--circle-button,
+    .dropup .profile--pic{
+        margin-left: -1rem;
+    }
 }

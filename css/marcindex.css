@@ -76,6 +76,11 @@ h3{
     background-color: var(--dark-bgcolor);
 }
 
+.secondary--button:hover{
+    color: var(--light-bgcolor);
+    background-color: var(--dark-bgcolor);
+}
+
 .signin--block, .login--block{
     width: 20rem;
 }
