@@ -14,66 +14,49 @@
   </head>
   <body>
     <div class="row">
-      <div class="col-5" style="height: 100%; margin-top: 6%;">
-        <img src="./src/x.jpg" class="logo">
-      </div>
       <div class="col-7" style="height: block;">
-        <div class="container">
-          <h1 class="titulo">Lo que está </h1>
-          <h1 class="titulo">pasando ahora</h1>
-          <h3 class="subtitulo">Únete hoy</h3>
-          <span class="login rounded-pill">
-            <i class="bi bi-google"></i>
-            Inicia sesión con Google 
-          </span>
-          <br />
-          <br />
-          <br />
-          <span class="login2 rounded-pill">
-            <i class="bi bi-apple"></i>
-            Registrarse con Apple
-          </span>
-          <br />
-          <br />
-          <hr >  
+        <div>
           <!-- Boton registrar-->
-          <button type="button" class="btn btn-registrar rounded-pill" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <button type="button" class="btn-registrar" data-bs-toggle="modal" data-bs-target="#ModalRegistrar">
             Crear Cuenta
           </button>
           <!-- Modal registrar-->
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="width: 90%;" >
-            <div class="modal-dialog" >
+          <!-- Modal Registrar dejar class,id,aria-labelledby y el aria-hidden -->
+          <div class="modal fade" id="ModalRegistrar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="width: 90%;" >
+            <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-body">
                   <row>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="font-size: large;"><i class="fa-solid fa-xmark" style="color: #ffffff;"></i></button>
-                    <h5 class="modal-title" id="exampleModalLabel" style="padding-left: 90px;">Crea tu cuenta</h5>
+                    <!--Boton de x para cerrar modal, opcional si quieres cambiarlo-->
+                    <button type="button" data-bs-dismiss="modal">CERRAR</button>
+                    <h5 class="modal-title">Crea tu cuenta</h5>
                   </row>
                   <form action="./Backend/files/registroUsuarios.php" method="post">
                     <div class="row">
-                        <br>
-                        
+                        <!--DEJAR LOS ID=INPUT,INPUT2,....
+                        SON NECESARIOS PARA EL SCRIPT DE QUE SE LLENEN TODOS LOS CAMPOS PARA QUE SE ACTIVE ELBOTON
+                        -->
                         <div class="form-outline">
-                          <input type="text" class="form-control input" name="nombre" placeholder="Nombre" id="input" required oninput="validarInput()"/>
+                          <input type="text" class="form-control" name="nombre" placeholder="Nombre" id="input" required oninput="validarInput()"/>
                         </div>
 
                         <div class="form-outline">
-                          <input type="text" class="form-control input" name="apaterno" placeholder="Apellido Paterno" id="input2" required oninput="validarInput()"/>
+                          <input type="text" class="form-control" name="apaterno" placeholder="Apellido Paterno" id="input2" required oninput="validarInput()"/>
                         </div>
 
                         <div class="form-outline">
-                          <input type="text" class="form-control input" name="amaterno" placeholder="Apellido Materno" id="input3" required oninput="validarInput()"/>
+                          <input type="text" class="form-control" name="amaterno" placeholder="Apellido Materno" id="input3" required oninput="validarInput()"/>
                         </div>
                         <div class="form-outline">
-                          <input type="text" class="form-control input" name="usuario" placeholder="Usuario" id="input4" required oninput="validarInput()"/>
+                          <input type="text" class="form-control" name="usuario" placeholder="Usuario" id="input4" required oninput="validarInput()"/>
                         </div>
                         <div class="form-outline">
-                          <input type="password" class="form-control input" name="password" placeholder="Contraseña" id="input5" required oninput="validarInput()"/>
+                          <input type="password" class="form-control" name="password" placeholder="Contraseña" id="input5" required oninput="validarInput()"/>
                         </div>
                     </div> 
                     <div class="modal-footer" style="margin-right: 10px;">
-                      <!-- Submit button -->
-                      <button  style="height: 70px; width: 80%; margin-right: 10%;" type="submit" class="btn btn-registrarfinal rounded-pill" id="boton" disabled>
+                      <!-- Submit button importante dejarlo con la class btn-registrarfinal y el id="boton" y el type obvio-->
+                      <button type="submit" class="btn btn-registrarfinal" id="boton" disabled>
                         Registrarse
                       </button>
                     </div>
@@ -85,7 +68,6 @@
                       <div> El usuario ya existe en el Sistema </div>
                     </div>
                   </form>
-
                 </div>
               </div>
             </div>
@@ -93,131 +75,50 @@
          
           <br />
           <br />
-          <!--Terminos y condiciones-->
-          <p>Al registrarte, aceptas los 
-            <a href="https://twitter.com/es/tos">Términos de Servicio</a> 
-            y la <a href="https://twitter.com/es/privacy"> Política <br> de privacidad</a>, 
-            incluida la política de 
-            <a href="https://help.twitter.com/es/rules-and-policies/x-cookies">Uso de Cookies.</a>
-          </p>
-          <br />
-          <br />
-          <h5>¿Ya tienes una cuenta?</h5>
-          <br />
-          <!-- Boton Iniciar Sesion-->
-          <button  type="button" class="btn btn-iniciar rounded-pill" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+          <!-- Boton Iniciar Sesion deja type,class,data-bs-toggle,data-bs-target-->
+          <button  type="button" class="btn btn-iniciar" data-bs-toggle="modal" data-bs-target="#ModalIniciarSesion">
             Iniciar Sesión
           </button>
           <br>
           <br>
-          <!-- Modal Iniciar Sesion -->
-          <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="width: 90%;">
+          <!-- Modal Iniciar Sesion dejar class,id,aria-labelledby y el aria-hidden -->
+          <div class="modal fade" id="ModalIniciarSesion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="font-size: large; margin-left: -10px;"><i class="fa-solid fa-xmark" style="color: #ffffff;"></i></button>
-                  <img src="./src/logo2.png" width="70px" height="70px" style="margin-right: 320px;">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark" style="color: #ffffff;"></i></button>
                 </div>
                 <div class="modal-body">
-                  <h5 class="modal-title" id="exampleModalLabel" style="padding-left: 220px;">Inicia Sesión en X</h5>
-                 
                   <form>
-                    <br />
-                    <span class="login rounded-pill" style="margin-left: 180px;">
-                      <i class="bi bi-google"></i>
-                      Inicia sesión con Google 
-                    </span>
-                    <br />
-                    <br />
-                    <br />
-                    <span class="login2 rounded-pill" style="margin-left: 180px;">
-                      <i class="bi bi-apple"></i>
-                      Registrarse con Apple
-                    </span>
-                    <br />
-                    <br />
-                    <br />
                     <div class="form-outline mb-4">
-                      <input type="text" id="usuario" class="form-control form-control-lg input" placeholder="Correo electronico o nombre de usuario" style="width: 390px; margin-left: 75px;"/>
+                      <!--DEJAR EL TYPE, EL ID, -->
+                      <input type="text" id="usuario"  placeholder="Correo electronico o nombre de usuario" />
                     </div>
                     <div class="form-outline mb-4">
-                      <input type="password" id="password" class="form-control form-control-lg input" placeholder="Contraseña" style="width: 390px; margin-left: 75px;"/>
+                      <!--DEJAR EL TYPE, EL ID, -->
+                      <input type="password" id="password" placeholder="Contraseña" />
                     </div>
                       <br />
                       <br />
                       <div>
-                        <button id="btnLogin" class="btn btn-info btn-lg btn-block rounded-pill" type="button" style="background-color: #ffffff; width: 390px; margin-left: 170px; font-weight: 600;">Login</button>
+                        <!--dejar el id-->
+                        <button id="btnLogin" type="button">Login</button>
                         <br />
-                        <!--ALERTAAAAA-->
+                        <!--ALERTA DE QUE FALTAN CAMPOS DEJA TODAS LAS CLASES-->
                         <div style="margin-top: 20px;" class="alertaLogin alert alert-dismissible hide fade alert-warning d-flex align-items-center" role="alert" id="alertaLogin">  
                           <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
                             <use xlink:href="#exclamation-triangle-fill"/>
                           </svg>  
-                          <div>   Faltan campos </div>
+                          <div> Faltan campos </div>
                         </div>
                       </div>
                   </form>
-                  
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- Footer -->
-      <footer class=" text-center text-white">
-          <br />
-          <br />
-          <br />
-          <br />
-          <!-- Links  -->
-          <section class="">
-            <!--Grid row-->
-            <div class="row">
-              <!--Grid column-->
-              <section class="mb-4">
-                <a href="#!" class="text-white">Información</a>
-                <a href="#!" class="text-white">Descarga la app de X</a>
-                <a href="#!" class="text-white">Centro de ayuda</a>
-                <a href="#!" class="text-white">Condiciones de Servicio</a>
-                <a href="#!" class="text-white">Política de Privacidad</a>
-                <a href="#!" class="text-white">Política de cookies</a>
-                <a href="#!" class="text-white">Accesibilidad</a>
-                <a href="#!" class="text-white">Información de anuncios</a>
-                <a href="#!" class="text-white">Blog</a>
-                <a href="#!" class="text-white">Estado</a>
-                <a href="#!" class="text-white">Empleos</a>
-              </section>
-            </div>
-
-          </section>
-          <br />
-          <br />
-          <br />
-          <br />
-          <h4>Sobre Nosotros</h4>
-          <!-- Sobre Nosotros -->
-          <section class="mb-4">
-            <!-- Github -->
-            <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/Nayde666" role="button"
-            ><i class="fab fa-github"></i
-            ></a>
-            <!-- Github -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fab fa-github"></i
-            ></a>
-            <!-- Github -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fab fa-github"></i
-            ></a>
-        </section>
-
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-          © 2023 Aplicaciones de Internet
-        </div>
-
-      </footer>
     </div>
 
     
