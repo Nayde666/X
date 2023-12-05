@@ -1,4 +1,5 @@
 <?php
+    # Versión final
     include("../config/conexion.php");
     $conn = conectar();
     $dataPost = file_get_contents('php://input');
