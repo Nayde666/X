@@ -1,142 +1,234 @@
+:root{
+    --main-color: #1DA1F2;
+    --secondary-color: #0084B4;
+    --light-bgcolor: #F5F8FA;
 
-/* Set height of the grid so .sidenav can be 100% (adjust if needed) */
-.row.content {height: 1500px}
-
-/* Set gray background color and 100% height */
-.sidenav {
-  background-color: #f1f1f1;
-  height: 100%;
+    --gray-bgcolor: #E1E8ED;
+    --dark-bgcolor: #14171A; 
+    --gray-txtcolor: #657786;
 }
 
-/* Set black background color, white text and some padding */
-footer {
-  background-color: #555;
-  color: white;
-  padding: 15px;
-}
-
-
-.be-comment-block {
-  margin-bottom: 50px !important;
-  border: 1px solid #edeff2;
-  border-radius: 2px;
-  padding: 50px 70px;
-  border:1px solid #ffffff;
-}
-
-.comments-title {
-  font-size: 16px;
-  color: #262626;
-  margin-bottom: 15px;
-  font-family: 'Conv_helveticaneuecyr-bold';
-}
-
-.be-img-comment {
-  width: 60px;
-  height: 60px;
-  float: left;
-  margin-bottom: 15px;
-}
-
-.be-ava-comment {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-}
-
-.be-comment-content {
-  margin-left: 80px;
-}
-
-.be-comment-content span {
-  display: inline-block;
-  width: 49%;
-  margin-bottom: 15px;
-}
-
-.be-comment-name {
-  font-size: 13px;
-  font-family: 'Conv_helveticaneuecyr-bold';
-}
-
-.be-comment-content a {
-  color: #383b43;
-}
-
-.be-comment-content span {
-  display: inline-block;
-  width: 49%;
-  margin-bottom: 15px;
-}
-
-.be-comment-time {
-  text-align: right;
-}
-
-.be-comment-time {
-  font-size: 11px;
-  color: #b4b7c1;
-}
-
-.be-comment-text {
-  font-size: 13px;
-  line-height: 18px;
-  color: #7a8192;
-  display: block;
-  background: #f6f6f7;
-  border: 1px solid #edeff2;
-  padding: 15px 20px 20px 20px;
-}
-
-.form-group.fl_icon .icon {
-  position: absolute;
-  top: 1px;
-  left: 16px;
-  width: 48px;
-  height: 48px;
-  background: #f6f6f7;
-  color: #b5b8c2;
-  text-align: center;
-  line-height: 50px;
-  -webkit-border-top-left-radius: 2px;
-  -webkit-border-bottom-left-radius: 2px;
-  -moz-border-radius-topleft: 2px;
-  -moz-border-radius-bottomleft: 2px;
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px;
-}
-
-.form-group .form-input {
-  font-size: 13px;
-  line-height: 50px;
-  font-weight: 400;
-  color: #b4b7c1;
-  width: 100%;
-  height: 50px;
-  padding-left: 20px;
-  padding-right: 20px;
-  border: 1px solid #edeff2;
-  border-radius: 3px;
-}
-
-.form-group.fl_icon .form-input {
-  padding-left: 70px;
-}
-
-.form-group textarea.form-input {
-  height: 150px;
-}
-
-
-/* On small screens, set height to 'auto' for sidenav and grid */
-@media screen and (max-width: 767px) {
-  .sidenav {
-    height: auto;
-    padding: 15px;
+* {
+    scrollbar-color: #555555 #ffffff; /* Cambia estos colores según tus preferencias */
   }
-  .row.content {height: auto;} 
+  
+  /* Cambiar el color de la pista */
+  * {
+    scrollbar-track-color: #ffffff; /* Cambia este color según tus preferencias */
+  }
+  
+  /* Cambiar el grosor del borde del pulgar */
+  * {
+    scrollbar-width: thin; /* Puedes usar 'thin', 'auto' o 'none' */
+  }
+
+body{
+    background-color: var(--light-bgcolor);
+    font-family: 'Roboto', sans-serif;
+    color: var(--dark-bgcolor);
+    overflow-x: hidden;
 }
 
-.pruebabtn{
-  display: none;
+textarea:focus, input:focus, input:active{
+    outline: none;
+    box-shadow: none;
+}
+
+.btn:focus,
+.btn-close:focus{
+    box-shadow: none;
+}
+
+.tweet--area{
+    resize: none;
+    padding-left: 0;
+    width: 100%;
+    background-color: var(--light-bgcolor);
+}
+
+.tweet--icons{
+    color: var(--main-color);
+}
+
+.left--sidebar, .right--sidebar, .mid--topbar{
+    position: sticky;
+    top: 0px;
+    height: fit-content;
+
+}
+
+.nav-link{
+    color: var(--dark-bgcolor);
+}
+
+.nav-link:hover, 
+.bottom--navbar i:hover, 
+.tweet--content .text--tweet-info i:hover{
+    cursor: pointer;
+    color: var(--main-color);
+}
+
+.mid--topbar{
+    background-color: var(--light-bgcolor);
+}
+
+.mid--active-section{
+    font-weight: bold;
+    border-bottom: 2px solid var(--main-color);
+}
+
+.mid--disabled-section{
+    color: var(--gray-txtcolor);
+    font-weight: bold;
+}
+
+.profile--pic{
+    border-radius: 50%;
+    width: 56px; 
+    height: 56px;
+}
+
+.btn{
+    border: none;
+    border-radius: 50rem;
+    color: var(--light-bgcolor);
+    font-weight: bold;
+}
+
+.main--button{
+    padding: 12px 6px;
+    background-color: var(--main-color);
+    font-size: 14px;
+}
+
+.tweet--circle-button{
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: var(--light-bgcolor);
+    background-color: var(--main-color);
+    width: 56px;
+    height: 56px;
+}
+
+.main--button:hover,
+.tweet--circle-button:hover{
+    color: var(--light-bgcolor);
+    background-color: var(--secondary-color);
+}
+
+.secondary--button{
+    padding: 8px 6px;
+    background-color: var(--dark-bgcolor);
+    font-size: 12px;
+}
+
+
+.search--bar{ 
+    position: relative;
+    width: 90%;
+    color: var(--hover-txtcolor);
+}
+
+.search--bar i{
+    position: absolute;
+    top: 50%;
+    left: 24px;
+    transform: translateY(-50%);
+    z-index: 1;
+    
+}
+
+.search--bar input{
+    padding-left: 56px;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--gray-bgcolor);
+}
+
+
+.search--bar input:focus{
+    outline: none;
+    background-color: var(--gray-bgcolor);
+}
+
+.left--container{
+    width: 90%;
+    padding: 12px 4px;
+    background-color: var(--gray-bgcolor);
+}
+
+.text--headline{
+    text-align: start;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.text--details{
+    text-align: start;
+    color: var(--gray-txtcolor);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.text--tweet-info{
+    color: var(--gray-txtcolor);
+}
+
+.account--info:hover{
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: var(--gray-bgcolor);
+}
+
+.account--options:hover{
+    cursor: pointer;
+}
+
+.account--options.dropdown-toggle::after{
+    display: none;
+}
+
+.card{
+    background-color: var(--light-bgcolor);
+}
+
+.card-text:hover{
+    cursor: pointer;
+}
+
+.modal-content{
+    background-color: var(--light-bgcolor);
+}
+
+.modal-body{
+
+    max-height: 440px;
+    overflow-y: auto;
+}
+
+.modal-header{
+    border-bottom: none;
+}
+
+.modal-header .btn-close{
+    margin-left: 0;
+}
+
+.modal-title{
+    padding: 0 .5rem 0 0;
+    color: var(--main-color);
+}
+
+.tweet-response{
+    position: sticky;
+    bottom: -1rem;
+    background-color: var(--light-bgcolor);
+
+}
+
+@media(max-width: 720px){
+    .tweet--circle-button,
+    .dropup .profile--pic{
+        margin-left: -1rem;
+    }
 }
