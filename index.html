@@ -1,148 +1,145 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700;800&family=Raleway:wght@100;200;700;800&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="./css/global.css">
-    <title>X. Es lo que está pasando</title>
-  </head>
-  <body>
-    <div class="row">
-      <div class="col-7" style="height: block;">
-        <div>
-          <!-- Boton registrar-->
-          <button type="button" class="btn-registrar" data-bs-toggle="modal" data-bs-target="#ModalRegistrar">
-            Crear Cuenta
-          </button>
-          <!-- Modal registrar-->
-          <!-- Modal Registrar dejar class,id,aria-labelledby y el aria-hidden -->
-          <div class="modal fade" id="ModalRegistrar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="width: 90%;" >
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-body">
-                  <row>
-                    <!--Boton de x para cerrar modal, opcional si quieres cambiarlo-->
-                    <button type="button" data-bs-dismiss="modal">CERRAR</button>
-                    <h5 class="modal-title">Crea tu cuenta</h5>
-                  </row>
-                  <form action="./Backend/files/registroUsuarios.php" method="post">
-                    <div class="row">
-                        <!--DEJAR LOS ID=INPUT,INPUT2,....
-                        SON NECESARIOS PARA EL SCRIPT DE QUE SE LLENEN TODOS LOS CAMPOS PARA QUE SE ACTIVE ELBOTON
-                        -->
-                        <div class="form-outline">
-                          <input type="text" class="form-control" name="nombre" placeholder="Nombre" id="input" required oninput="validarInput()"/>
-                        </div>
 
-                        <div class="form-outline">
-                          <input type="text" class="form-control" name="apaterno" placeholder="Apellido Paterno" id="input2" required oninput="validarInput()"/>
-                        </div>
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./css/index.css">
+        <title>X, Es lo que está pasando ahora / X</title>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-3 col-sm-5 my-4">
+                    <img class="img-fluid" src="./src/x_logo.png" alt="">
+                </div>
+                <div class="col-10 col-sm-6 mt-sm-3 mt-md-5 ps-4">
+                    <h1 class="display-3 mb-0">Lo que está</h1>
+                    <h1 class="display-3">pasando ahora</h1>
+                    <div class="row mt-5 signin--block">
+                        <h3 class="">Únete hoy</h3>
+                        <button type="button" class="btn signin--button">
+                            <i class="bi bi-google text-primary"></i>
+                            <span class="ps-2">Registrarse con Google</span>
+                        </button>
+                        <button type="button" class="btn signin--button">
+                            <i class="bi bi-apple"></i>
+                            <span class="ps-2">Registrarse con Apple</span>
+                        </button>
+                        <hr>
+                        <span class="separator">o</span>
+                        <button type="button" class="btn main--button" data-bs-toggle="modal" data-bs-target="#ModalRegistrar">
+                            <span>Crear cuenta</span>
+                        </button>
+                        <p>
+                            Al registrarte, aceptas los <a href="" class="text-decoration-none">Términos de servicio</a> y la <a href="" class="text-decoration-none">Política de privacidad</a>, 
+                            incluida la política de <a href="" class="text-decoration-none">Uso de Cookies</a>.
+                        </p>
+                    </div>
+                    <div class="row mt-5 login--block">
+                        <h6>¿Ya tienes una cuenta?</h6>
+                        <button type="button" class="btn login--button" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            <span>Iniciar sesión</span>
+                        </button>
+                    </div>
+                </div>
+                <!--Modal Cards-->
 
-                        <div class="form-outline">
-                          <input type="text" class="form-control" name="amaterno" placeholder="Apellido Materno" id="input3" required oninput="validarInput()"/>
+                <!--Create account-->
+                <div class="modal fade" id="ModalRegistrar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <row>
+                                    <h5 class="modal-title ps-5">Paso 1 de 2</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </row>
+                            </div>
+                            <div class="modal-body">
+                                <div class="register--container">
+                                    <h4 class="modal-title">Crea tu cuenta</h4>
+                                    <form action="./Backend/files/registroUsuarios.php" method="post" class="form--container">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="nameInput" name="nombre" maxlength="25" placeholder="Nombre" required oninput="validInputs()"/>
+                                            <label for="nombre" class="form-label">Nombre</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="lastnameInput" name="apellido" maxlength="25" placeholder="Apellido" required oninput="validInputs()"/>
+                                            <label for="apellido" class="form-label">Apellido</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input type="email" class="form-control" id="emailInput" placeholder="Correo electrónico" required oninput="validInputs()"/>
+                                            <label for="nombre" class="form-label">Correo electrónico</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="userInput" placeholder="Tag de usuario" required oninput="validInputs()"/>
+                                            <label for="nombre" class="form-label">Tag de usuario</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input type="password" class="form-control" id="passwordInput" name="password" placeholder="Contraseña" required oninput="validInputs()"/>
+                                            <label for="password" class="form-label">Contraseña</label>
+                                        </div>
+                                        <div class="row mt-4">
+                                            <button type="submit" class="btn secondary--button" id="btnSignin" disabled>Siguiente</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-outline">
-                          <input type="text" class="form-control" name="usuario" placeholder="Usuario" id="input4" required oninput="validarInput()"/>
-                        </div>
-                        <div class="form-outline">
-                          <input type="password" class="form-control" name="password" placeholder="Contraseña" id="input5" required oninput="validarInput()"/>
-                        </div>
-                    </div> 
-                    <div class="modal-footer" style="margin-right: 10px;">
-                      <!-- Submit button importante dejarlo con la class btn-registrarfinal y el id="boton" y el type obvio-->
-                      <button type="submit" class="btn btn-registrarfinal" id="boton" disabled>
-                        Registrarse
-                      </button>
                     </div>
-                     <!--ALERT USUARIO YA EXISTENTE-->
-                    <div class="alert alert-dismissible hide fade alert-warning d-flex align-items-center" role="alert" type="hidden">  
-                      <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
-                          <use xlink:href="#exclamation-triangle-fill"/>
-                      </svg>  
-                      <div> El usuario ya existe en el Sistema </div>
-                    </div>
-                  </form>
                 </div>
-              </div>
+                <!--Log In-->
+                <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body ">
+                                <img class="rounded logo" src="./src/x_logo.png" alt="">
+                                <div class="login--container">
+                                    
+                                    <h2 class="modal-title text-center my-3">Inicia sesión en X</h2>
+                                    <div class="row">
+                                        <button type="button" class="btn signin--button">
+                                            <i class="bi bi-google text-primary"></i>
+                                            <span class="ps-2">Iniciar sesión con Google</span>
+                                        </button>
+                                        <button type="button" class="btn signin--button">
+                                            <i class="bi bi-apple"></i>
+                                            <span class="ps-2">Iniciar sesión con Apple</span>
+                                        </button>
+                                        <hr>
+                                        <span class="separator">o</span>
+                                    </div>
+                                    <form action="" class="form--container">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Correo electrónico o nombre de usuario"/>
+                                            <label for="usuario" class="form-label">Correo electrónico o usuario</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña"/>
+                                            <label for="password" class="form-label">Contraseña</label>
+                                        </div>
+                                        <div class="row mt-4">
+                                            <button type="submit" id="btnLogin" class="btn secondary--button">Siguiente</button>
+                                            <button type="button" class="btn signin--button">¿Olvidaste tu contraseña?</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-         
-          <br />
-          <br />
-          <!-- Boton Iniciar Sesion deja type,class,data-bs-toggle,data-bs-target-->
-          <button  type="button" class="btn btn-iniciar" data-bs-toggle="modal" data-bs-target="#ModalIniciarSesion">
-            Iniciar Sesión
-          </button>
-          <br>
-          <br>
-          <!-- Modal Iniciar Sesion dejar class,id,aria-labelledby y el aria-hidden -->
-          <div class="modal fade" id="ModalIniciarSesion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark" style="color: #ffffff;"></i></button>
-                </div>
-                <div class="modal-body">
-                  <form>
-                    <div class="form-outline mb-4">
-                      <!--DEJAR EL TYPE, EL ID, -->
-                      <input type="text" id="usuario"  placeholder="Correo electronico o nombre de usuario" />
-                    </div>
-                    <div class="form-outline mb-4">
-                      <!--DEJAR EL TYPE, EL ID, -->
-                      <input type="password" id="password" placeholder="Contraseña" />
-                    </div>
-                      <br />
-                      <br />
-                      <div>
-                        <!--dejar el id-->
-                        <button id="btnLogin" type="button">Login</button>
-                        <br />
-                        <!--ALERTA DE QUE FALTAN CAMPOS DEJA TODAS LAS CLASES-->
-                        <div style="margin-top: 20px;" class="alertaLogin alert alert-dismissible hide fade alert-warning d-flex align-items-center" role="alert" id="alertaLogin">  
-                          <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
-                            <use xlink:href="#exclamation-triangle-fill"/>
-                          </svg>  
-                          <div> Faltan campos </div>
-                        </div>
-                      </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-
-    
-    <script>
-      function validarInput() {
-      var inputTexto = document.getElementById('input');
-      var inputTexto2 = document.getElementById('input2');
-      var inputTexto3 = document.getElementById('input3');
-      var inputTexto4 = document.getElementById('input4');
-      var inputTexto5 = document.getElementById('input5');
-      var boton = document.getElementById('boton');
-
-      if (inputTexto.value.trim() !== '' & inputTexto2.value.trim() !== '' & inputTexto3.value.trim() !== '' & inputTexto4.value.trim() !== '' & inputTexto5.value.trim() !== '') {
-        // Si el input tiene texto, habilitar el botón
-        boton.disabled = false;
-      } else {
-        // Si el input no tiene texto, deshabilitar el botón
-        boton.disabled = true;
-      }
-    }
-    </script>
-
-    <script src="./js/registrar.js"></script>
-    <script src="./js/index.js"></script>
+    </body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  </body>
+    <script src="./js/index.js"></script>
 </html>

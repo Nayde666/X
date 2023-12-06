@@ -1,163 +1,476 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Inicio / X</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./css/home.css">
-</head>
-<body>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="./css/home.css"/>
+        <title>X: Home</title>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <!--Nav bar-->
+            <nav class="bg-light fixed-bottom d-sm-none bottom--navbar border-top">
+                <div class="container-fluid">
+                    <div class="row h-50 align-items-center py-2">
+                        <div class="col-3 d-flex justify-content-center">
+                            <span><i class="bi bi-house-door-fill fs-2"></i></span>
+                        </div>
+                        <div class="col-3 d-flex justify-content-center">
+                            <span><i class="bi bi-search fs-2"></i></span>
+                        </div>
+                        <div class="col-3 d-flex justify-content-center">
+                            <span><i class="bi bi-bell fs-2"></i></span>
+                        </div>
+                        <div class="col-3 d-flex justify-content-center dropup">
+                            <span>
+                                <i class="bi bi-person fs-2 account--options" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><a href="" class="dropdown-item">Cerrar sesión</a></li> 
+                                    <li><a href="" class="dropdown-item">Vincular otra cuenta</a></li>
+                                 </ul>
+                            </span>
+                        </div>
 
-<div class="container-fluid">
-  <div class="row content">
-    <div class="col-sm-3">
-      <h4 id="userBlog"></h4>
-      <h5 id="userName"></h5>
-      <br>
-      <div class="input-group">
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="button">
-            <span class="glyphicon glyphicon-search"></span>
-          </button>
-        </span>
-      </div>
-    </div>
-    <!--NEW POST -->
-    <div class="col-sm-9">
-      <div class="mt-5">
-        <div class="form-block">
-          <textarea type="button" class="form-input" placeholder="¡¿Qué está pasando?!" name="mensaje" data-bs-toggle="modal" data-bs-target="#exampleModal"></textarea>
-          <form class="form-block" method="POST" action="./Backend/files/newPost.php">
-            <!--<input name="idUsuario" id="idUsuario" >-->
-            <div class="row">
-              <div class="col-xs-12 col-sm-6">
-              </div>
-              <div class="col-xs-12">					
-                <!--AQUI SE ABREEEE-->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        <h5 class="modal-title" id="exampleModalLabel">Borradores</h5>
-                      </div>
-                      <div class="modal-body">
-                        <!--FORMULARIO PARA UN POST-->
-                        <form class="form-block" method="POST" action="./Backend/files/newPost.php">
-                          <input name="nombre" id="nombre">
-                          <input name="idUsuario" id="idUsuario">
-                          <div class="row">
-                            <div class="col-xs-12 col-sm-6">
-                            </div>
-                            <div class="col-xs-12">					
-                              <div class="form-group">
-                                <textarea class="form-input" required="" placeholder="Your text" name="mensaje"></textarea>
-                              </div>
-                              <button type="submit" class="btn btn-primary" >
-                                Guardar
-                              </button>			
-                            </div>
-                          </div>
-                        </form>
-                      </div>
+
                     </div>
-                  </div>
-                </div>				
-              </div>
-            </div>
-          </form>
-          <button type="submit" class="btn btn-primary" >
-            Guardar
-          </button>
-        </div>
-      </div>
-
-      <div type="button" id="postUsuarios">
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!--TEMPLATEEEE-->
-<template id="cardPost">
-  <div class="card" style="width: 100%; margin-top: 50px;">
-    <div class="card-body">
-      <h5 class="userNamePost"></h5>
-      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <p class="fecha">Fecha de Publicación</p>
-      <row>
-        <button> <i class="fa-regular fa-heart"></i> </button>
-        <button type="button" class="btn btn-primary btn-comment" data-bs-toggle="modal" data-bs-target="#commentModal" data-idpost="">
-          <i class="fa-regular fa-comment"></i> 
-        </button>
-        <p class="comentarios-parrafo" ></p>
-        <button type="button" id="buttonloadComment" class="buttonloadComment">aqui</button>
-        <div class="modal fade" id="MostrarComentarios" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                ...
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      <!-- Modal para realizar un comentario -->
-        <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  <h5 class="modal-title" style="margin-left:75%;">Borradores</h5>
-              </div>
-            <!--FORMULARIO PARA COMENTARIO-->
-              <div class="modal-body" id="cardPost">
-                <p id="nombreusuariopost" >Aqui se carga el nombre del que hizo el post</p>
-                <p id="idusuariopost" >Aqui se carga el idusuario del que hizo el post</p>
-                <p id="contenidodelpost">Aqui se carga el contendo del post</p>
-                <div class="mt-5">
-                  <div class="form-block">
-                    <!--NEW COMMENT-->
-                    <div class="form-block">
-                      <form id="commentForm" class="form-block" method="POST" action="./Backend/files/newComent.php">
-                        <input name="idPost" id="commentPostId">
-                        <!--IDUSUARIO2----------------------------------------->
-                        <input name="nombre" id="nombreUsuario-Comment">
-                        <input name="idUsuario-Comment" id="idUsuario-Comment">
-                        <textarea name="comentario" id="comentario" class="form-input" required="" placeholder="Postea tu respuesta"></textarea>
-                        <button type="submit" class="btn btn-primary" id="btnComent" >
-                          Responder
-                        </button>
-                        
-                      </form>
-                    </div>
-                  </div>
                 </div>
-              </div>
+            </nav>
+            <div class="row">
+                <!--Header-->
+                <header class="d-none d-sm-block col-sm-2 col-md-2 col-lg-4 col-xl-3 ps-5 border-end left--sidebar">
+                    <div class="pt-3 ps-md-3 ps-lg-5 text-sm-center text-md-start">
+                        <a class="text-dark text-decoration-none fs-4">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                    </div>
+                    <!--Left Navbar-->
+                    <nav class="nav flex-column mt-3 text-sm-end text-md-start fs-6">
+                        <a href="" class="nav-link ps-lg-5">
+                            <i class="bi bi-house-door-fill"></i>
+                            <span class="d-none d-lg-inline ps-3 fw-bold">Inicio</span>
+                        </a>
+                        <a href="" class="nav-link ps-lg-5">
+                            <i class="bi bi-hash"></i>
+                            <span class="d-none d-lg-inline ps-3">Explorar</span>
+                        </a>
+                        <a href="" class="nav-link ps-lg-5">
+                            <i class="bi bi-bell"></i>
+                            <span class="d-none d-lg-inline ps-3">Notificaciones</span>
+                        </a>
+                        <a href="" class="nav-link ps-lg-5">
+                            <i class="bi bi-envelope"></i>
+                            <span class="d-none d-lg-inline ps-3">Mensajes</span>
+                        </a>
+                        <a href="" class="nav-link ps-lg-5">
+                            <i class="bi bi-file-text"></i>
+                            <span class="d-none d-lg-inline ps-3">Listas</span>
+                        </a>
+                        <a href="" class="nav-link ps-lg-5">
+                            <i class="bi bi-bookmark"></i>
+                            <span class="d-none d-lg-inline ps-3">Guardados</span>
+                        </a>
+                        <a href="" class="nav-link ps-lg-5">
+                            <i class="bi bi-twitter-x"></i>
+                            <span class="d-none d-lg-inline ps-3">Premium</span>
+                        </a>
+                        <a href="" class="nav-link ps-lg-5">
+                            <i class="bi bi-person"></i>
+                            <span class="d-none d-lg-inline ps-3">Perfil</span>
+                        </a>
+                        <a href="" class="nav-link ps-lg-5">
+                            <i class="bi bi-three-dots"></i>
+                            <span class="d-none d-lg-inline ps-3">Más opciones</span>
+                        </a>
+                    </nav>
+
+                    <!--Post buttons-->
+                    <div class="d-none d-sm-block d-lg-none mt-4">
+                        <button class="btn tweet--circle-button" data-bs-toggle="modal" data-bs-target="#tweetModal">
+                            <i class="bi bi-feather"></i>
+                        </button>
+                    </div>
+                    <div class="d-none ps-lg-5 d-lg-grid mt-4">
+                        <button class="btn main--button" data-bs-toggle="modal" data-bs-target="#tweetModal">Postear</button>
+                    </div>
+
+                    <!--Account info-->
+                    <div class="d-none d-sm-block d-lg-none mt-5 dropup">
+                        <img src="./src/profile_sample.png" alt="" class="profile--pic dropdown-toggle account--options" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li><a href="" class="dropdown-item">Cerrar sesión</a></li> 
+                            <li><a href="" class="dropdown-item">Vincular otra cuenta</a></li>
+                         </ul>
+                    </div>
+
+                    <div class="row d-none d-lg-flex justify-content-between align-items-center mt-5 ps-lg-5 py-2 account--info">
+                        <div class="col-lg-2">
+                            <img src="./src/profile_sample.png" alt="" class="profile--pic">
+                        </div>
+                        <div class="col-lg-7 ps-5">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <span id="userName" class="fw-bold">MyName</span>
+                                </div>
+                                <div class="col-lg-12">
+                                    <span id="userTag" class="text--tweet-info">@usernametag</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 text-center">
+                            <div class="dropup">
+                                <i class="bi bi-three-dots dropdown-toggle account--options" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                   <li><a href="" class="dropdown-item">Cerrar sesión</a></li> 
+                                   <li><a href="" class="dropdown-item">Vincular otra cuenta</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                
+                <!--Main section-->
+                <main class="col-12 col-sm-10 col-md-7 col-lg-5">
+                    <!--Logo Top (No sticky)-->
+                    <div class="row d-flex d-sm-none">
+                        <div class="col">
+                            <div class="text-center">
+                                <a class="text-dark text-decoration-none fs-1">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-between align-items-center border-bottom mid--topbar">
+                        <div class="col py-3 text-center">
+                            <span class="fs-6 mid--active-section">Para ti</span>
+                        </div>
+                        <div class="col py-3 text-center">
+                            <span class="fs-6 mid--disabled-section">Siguiendo</span>
+                        </div>
+                    </div>
+
+                    <section class="row mt-2">
+                        <div class="col pt-2">
+                            <!--Tweet area-->
+                            <div class="row pb-2 border-bottom">
+                                <div class="col-2 mt-1 pt-2 text-center">
+                                    <img src="./src/profile_sample.png" alt="" class="profile--pic">
+                                </div>
+
+                                <div class="col-9 col-sm-10 ">
+                                    <textarea id="tweetMain" class="form-control-lg border-0 tweet--area" type="text" rows="1" placeholder="¡¿Qué está pasando?!" data-bs-toggle="modal" data-bs-target="#tweetModal">
+                                    </textarea>
+
+                                    <div class="row d-flex align-items-center">
+                                        <div class="col-8 col-md-9 tweet--icons">
+                                            <span class=""><i class="bi bi-image"></i></span>
+                                            <span class="ps-3"><i class="bi bi-filetype-gif"></i></span>
+                                            <span class="ps-3"><i class="bi bi-emoji-smile"></i></span>
+                                            <span class="ps-3"><i class="bi bi-calendar-event"></i></span>
+                                            <span class="ps-3"><i class="bi bi-geo-alt"></i></span>
+                                        </div>
+                                        <div class="col-4 col-md-3 d-flex d-md-block">
+                                            <button id="btnPostMain" class="btn main--button w-100" disabled>Postear</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Tweet Modal-->
+                                <div class="modal fade" id="tweetModal" tabindex="-1" aria-labelledby="tweetModalTitle" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <form method="POST" action="./Backend/files/newPost.php">
+                                                <div class="modal-header">
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    <h6 class="modal-title ms-auto">Borradores</h6>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-2 pt-2 text-end">
+                                                            <img src="./src/profile_sample.png" alt="" class="profile--pic">
+                                                        </div>
+                                                        <div class="col-10 pt-2">
+                                                            <input id="nombre" class="d-none" name="nombre" />
+                                                            <input id="idUsuario" class="d-none" name="idUsuario" />
+                                                            <textarea id="tweetArea" class="form-control-lg border-0 tweet--area" type="text" rows="2" name="mensaje" placeholder="¡¿Qué está pasando?!" required="" >
+                                                            </textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer d-flex align-items-center justify-content-between">
+                                                    <div class="col-auto tweet--icons">
+                                                        <span class=""><i class="bi bi-image"></i></span>
+                                                        <span class="ps-3"><i class="bi bi-filetype-gif"></i></span>
+                                                        <span class="ps-3"><i class="bi bi-emoji-smile"></i></span>
+                                                        <span class="ps-3"><i class="bi bi-calendar-event"></i></span>
+                                                        <span class="ps-3"><i class="bi bi-geo-alt"></i></span>
+                                                    </div>
+                                                    <div class="col-3 d-flex d-md-block">
+                                                        <button id="btnPost" type="submit" class="btn main--button w-100" disabled>Postear</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Tweets Container-->
+                            <div id="usersPosts">                                
+                            </div>
+                            
+                            <!--Tweet Template-->
+                            <template id="postCard">
+                                <div class="card border-0">
+                                    <div class="row d-flex mt-1 border-bottom">
+                                        <div class="col-2 mt-1 pt-2 text-center">
+                                            <img src="./src/profile_sample.png" alt="" class="profile--pic"/>
+                                        </div>
+
+                                        <div class="col-9 ps-1">
+                                            <div class="row d-flex justify-content-between align-items-center">
+                                                <div class="col-10 pt-2">
+                                                    <p>
+                                                        <span class="fw-bold user-name">MyName</span>
+                                                        <span class="text--tweet-info">
+                                                            <span class="user-tag">@usernametag</span>
+                                                            <i class="bi bi-dot"></i>
+                                                            <span class="post-date">23h</span>
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                                <div class="col-1 me-2 ps-0">
+                                                    <span class="dropdown">
+                                                        <i class="bi bi-three-dots py-3 fs-6 dropdown-toggle account--options" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                            <li><a href="" class="dropdown-item text-danger">Reportar tweet</a></li> 
+                                                         </ul>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col tweet--content">
+                                                <p class="card-text">Esto es un ejemplo de tweet</p>
+                                                <div class="row pb-2 text--tweet-info">
+                                                    <div class="col d-flex align-items-center">
+                                                        <span class="d-flex align-items-center">
+                                                            <i class="bi bi-chat btn-response" data-bs-toggle="modal" data-bs-target="#postModal" data-idpost=""></i>
+                                                            <span class="text--tweet-info ps-1 responses-number" style="font-size: 0.8rem;">100K</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="col d-flex align-items-center">
+                                                        <span><i class="fa-solid fa-retweet"></i></span>
+                                                    </div>
+                                                    <div class="col d-flex align-items-center">
+                                                        <span class="d-flex align-items-center">
+                                                            <i class="bi bi-heart"></i>
+                                                            <span class="text--tweet-info ps-1 likes-number" style="font-size: 0.8rem;">100K</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="col d-flex align-items-center">
+                                                        <span><i class="bi bi-bar-chart-fill"></i></span>
+                                                    </div>
+                                                    <div class="col d-flex align-items-center">
+                                                        <span><i class="bi bi-bookmark"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                            
+                                        <!--Comment Modal-->
+                                        <div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="postModalTitle" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <form id="commentForm" method="POST" action="./Backend/files/newComent.php">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            <h6 class="modal-title ms-auto">Borradores</h6>
+                                                        </div>
+                                                        <div class="modal-body">
+
+                                                            <!--Main Tweet-->
+                                                            <div class="row">
+                                                                <div class="col-2 pt-2 text-center">
+                                                                    <img src="./src/profile_sample.png" alt="" class="profile--pic"/>
+                                                                </div>
+                                                                <div class="col-9 pe-0 pe-md-2 ">
+                                                                    <div class="row d-flex justify-content-between align-items-center">
+                                                                        <div class="col-10">
+                                                                            <p>
+                                                                                <span id="postUsername" class="fw-bold">MyName</span>
+                                                                                <span class="text--tweet-info">
+                                                                                    <span id="postUserId" class="">@usernametag</span>
+                                                                                    <i class="bi bi-dot"></i>
+                                                                                    <span id="postContent" class="">23h</span>
+                                                                                </span>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col tweet--content">
+                                                                        <p class="">Esto es un ejemplo de tweet</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Responses-->
+                                                            <!--
+                                                            <div class="row mt-3">
+                                                                <div class="col-2 pt-2 text-center">
+                                                                    <img src="./src/profile_sample.png" alt="" class="profile--pic"/>
+                                                                </div>
+                                                                <div class="col-9">
+                                                                    <div class="row d-flex justify-content-between align-items-center">
+                                                                        <div class="col-10">
+                                                                            <p>
+                                                                                <span class="fw-bold">Pedacito </span>
+                                                                                <span class="text--tweet-info">
+                                                                                    @Cod3Break3r9<i class="bi bi-dot"></i>23h
+                                                                                </span>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col tweet--content">
+                                                                        <p class="">Te amo</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            -->
+
+                                                            <!--Tweet Response Area-->
+                                                            <div class="row mt-3 tweet-response">
+                                                                <div class="col-2 pt-2 text-end">
+                                                                    <img src="./src/profile_sample.png" alt="" class="profile--pic">
+                                                                </div>
+                                                                <div class="col-10 pt-2">
+                                                                    <!--Data to send -r -->
+                                                                    <input id="commentPostId" class="d-none" name="idPost"/>
+                                                                    <input id="nombreUsuario-Comment" class="d-none" name="nombre" />
+                                                                    <input id="idUsuario-Comment" class="d-none" name="idUsuario-Comment" />
+                                                                    <textarea id="tweetResponseArea" name="comentario" class="form-control-lg border-0 tweet--area" type="text" rows="2" placeholder="Responder post" required="">
+                                                                    </textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer d-flex align-items-center justify-content-between">
+                                                            <div class="col-auto tweet--icons">
+                                                                <span class=""><i class="bi bi-image"></i></span>
+                                                                <span class="ps-3"><i class="bi bi-filetype-gif"></i></span>
+                                                                <span class="ps-3"><i class="bi bi-emoji-smile"></i></span>
+                                                                <span class="ps-3"><i class="bi bi-calendar-event"></i></span>
+                                                                <span class="ps-3"><i class="bi bi-geo-alt"></i></span>
+                                                            </div>
+                                                            <div class="col-3 d-flex d-md-block">
+                                                                <button type="submit" id="btnComment" class="btn main--button w-100" disabled>Responder</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                            
+                        </div>
+                    </section>
+                </main>
+                
+                <!--Right Sidebar-->
+                <aside class="col-md-3 col-lg-4 d-none d-md-block w-25 h-25 right--sidebar">
+                    <div class="mt-2 search--bar ">
+                        <i class="bi bi-search"></i>
+                        <input type="text" class="form-control" placeholder="Buscar..." aria-label="Buscar">               
+                        
+                    </div>
+                    <div class="row mx-1 mt-4 rounded-3 left--container">
+                        <div class="col">
+                            <p class="fs-6 fw-bold">Suscríbete a Premium</p>
+                            <p class="text--headline">
+                                Suscríbete para desbloquear nuevas funciones y, si eres elegible, 
+                                recibir un pago de cuota de ingresos por anuncios
+                            </p>
+                            <div class="d-grid mt-4 mb-2">
+                                <button class="btn secondary--button">
+                                    <a class="text-decoration-none text-white" href="https://help.twitter.com/es/using-x/x-premium">Suscribirse</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mx-1 my-2 rounded-3 left--container">
+                        <div class="col">
+                            <p class="fs-6 fw-bold">En directo en X</p>
+
+                        </div>
+                    </div>
+                    <div class="row mx-1 my-2 rounded-3 left--container">
+                        <div class="col">
+                            <p class="fs-6 fw-bold">Qué está pasando</p>
+                            <div class="trending--item">
+                                <div class="row">
+                                    <div class="col-9">
+                                        <p class="m-0 text--details">Tendencia en México</p>
+                                    </div>
+                                    <div class="col-3 text-end text--details">
+                                        <span><i class="bi bi-three-dots pe-2"></i></span>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="text--headline mb-0">#Crazy Cars</p>
+                                        <p class="text--details">12.7 K Tweets</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trending--item">
+                                <div class="row">
+                                    <div class="col-9">
+                                        <p class="m-0 text--details">Tendencia en México</p>
+                                    </div>
+                                    <div class="col-3 text-end text--details">
+                                        <span><i class="bi bi-three-dots pe-2"></i></span>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="text--headline mb-0">#Crazy Cars</p>
+                                        <p class="text--details">12.7 K Tweets</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trending--item">
+                                <div class="row">
+                                    <div class="col-9">
+                                        <p class="m-0 text--details">Tendencia en México</p>
+                                    </div>
+                                    <div class="col-3 text-end text--details">
+                                        <span><i class="bi bi-three-dots pe-2"></i></span>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="text--headline mb-0">#Crazy Cars</p>
+                                        <p class="text--details">12.7 K Tweets</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </aside>
+            
             </div>
-          </div>
         </div>
-      </row>
-      
-    </div>
-  </div>
-</template>
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="./js/home.js"></script>
-</body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="./js/home.js" type="text/javascript"></script>
+    </body>
 </html>
