@@ -41,7 +41,8 @@ btnLogin.addEventListener('click', () => {
             console.log('@@@ error =>', error)
         })
     }
-}) 
+}) //
+
 const activaAlerta = mensaje => {
     const alerta = document.getElementsByClassName('alertaLogin')
     //console.log('alerta', alerta)
@@ -53,3 +54,20 @@ const activaAlerta = mensaje => {
         alerta[0].classList.add('hide')
     }, 3000)
 }
+
+function validInputs() {
+    var inputTexto = document.getElementById('nameInput');
+    var inputTexto2 = document.getElementById('lastname1');
+    var inputTexto3 = document.getElementById('lastname2');
+    var inputTexto4 = document.getElementById('emailInput');
+    var inputTexto5 = document.getElementById('passwordInput');
+    var boton = document.getElementById('btnSignin');
+
+    if (inputTexto.value.trim() !== '' & inputTexto2.value.trim() !== '' & inputTexto3.value.trim() !== '' & inputTexto4.value.trim() !== '' & inputTexto5.value.trim() !== '') {
+      // Si el input tiene texto, habilitar el botón
+      boton.disabled = false;
+    } else {
+      // Si el input no tiene texto, deshabilitar el botón
+      boton.disabled = true;
+    }
+  }
