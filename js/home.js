@@ -113,8 +113,4 @@ const loadUser  = () => {
     }
     console.log('@@@ usuario => ', usuario)
 }
-    console.log('@@@ usuario => ', usuario)
-}
-
-
 

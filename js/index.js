@@ -41,8 +41,7 @@ btnLogin.addEventListener('click', () => {
             console.log('@@@ error =>', error)
         })
     }
-})
-
+}) 
 const activaAlerta = mensaje => {
     const alerta = document.getElementsByClassName('alertaLogin')
     //console.log('alerta', alerta)
