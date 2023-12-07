@@ -11,5 +11,4 @@ document.addEventListener('DOMContentLoaded', () => {
             alerta[0].classList.add('hide')
         }, 3000);
     }
-    //console.log(params, existe)
 })

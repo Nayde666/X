@@ -22,6 +22,9 @@ postContainer.addEventListener('click', async (e) => {
       const nombre = btnComment.getAttribute('data-nombreusuario')
       document.getElementById('nombreusuariopost').textContent = nombre
 
+      const fecha = btnComment.getAttribute('fecha')
+      document.getElementById('postfecha').textContent = fecha
+
       const idusuariopost = btnComment.getAttribute('data-idUsuario')
       document.getElementById('idusuariopost').textContent = idusuariopost
 
@@ -34,7 +37,6 @@ postContainer.addEventListener('click', async (e) => {
       const inputnombre = document.getElementById('nombreUsuario-Comment')
       inputnombre.value = loggedUser.nombre
     }
-
     const buttonloadComment = e.target.closest('.buttonloadComment')
     if (buttonloadComment){
         const idPost = buttonloadComment.getAttribute('data-idpost')
@@ -62,12 +64,13 @@ const dibujaPosts = (posts)=> {
         postCard.querySelector('.fecha').textContent = item.fecha
 
         const comentariosParrafo = postCard.querySelector('.comentarios-parrafo')
-        comentariosParrafo.textContent = `Comentarios: ${item.totalComentarios}`
+        comentariosParrafo.textContent = `${item.totalComentarios}`
         const clone = postCard.cloneNode(true)
 
         
         const btnComment = clone.querySelector('.btn-comment')
         btnComment.setAttribute('data-idpost', item.idPost)
+        btnComment.setAttribute('fecha', item.fecha)
         btnComment.setAttribute('data-nombreusuario', item.nombre)
         btnComment.setAttribute('data-idUsuario', item.idUsuario)
         btnComment.setAttribute('data-mensaje', item.mensaje)
@@ -113,4 +116,5 @@ const loadUser  = () => {
     }
     console.log('@@@ usuario => ', usuario)
 }
+
 

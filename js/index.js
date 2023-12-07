@@ -56,18 +56,18 @@ const activaAlerta = mensaje => {
 }
 
 function validInputs() {
-    var inputTexto = document.getElementById('nameInput');
-    var inputTexto2 = document.getElementById('lastname1');
-    var inputTexto3 = document.getElementById('lastname2');
-    var inputTexto4 = document.getElementById('emailInput');
-    var inputTexto5 = document.getElementById('passwordInput');
-    var boton = document.getElementById('btnSignin');
+    var inputTexto = document.getElementById('nameInput')
+    var inputTexto2 = document.getElementById('lastname1')
+    var inputTexto3 = document.getElementById('lastname2')
+    var inputTexto4 = document.getElementById('emailInput')
+    var inputTexto5 = document.getElementById('passwordInput')
+    var boton = document.getElementById('btnSignin')
 
     if (inputTexto.value.trim() !== '' & inputTexto2.value.trim() !== '' & inputTexto3.value.trim() !== '' & inputTexto4.value.trim() !== '' & inputTexto5.value.trim() !== '') {
       // Si el input tiene texto, habilitar el botón
-      boton.disabled = false;
+      boton.disabled = false
     } else {
       // Si el input no tiene texto, deshabilitar el botón
-      boton.disabled = true;
+      boton.disabled = true
     }
   }

@@ -88,5 +88,3 @@ const dibujaComments = (comments)=> {
     commentContainer.appendChild(fragment)
 }
 
-
-
