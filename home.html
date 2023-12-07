@@ -90,12 +90,12 @@
           </nav>
           <!--Post buttons-->
           <div class="d-none d-sm-block d-lg-none mt-4">
-            <button class="btn tweet--circle-button" data-bs-toggle="modal" data-bs-target="#tweetModal">
+            <button class="btn tweet--circle-button" data-bs-toggle="modal" data-bs-target="#nuevopost">
               <i class="bi bi-feather"></i>
             </button>
           </div>
           <div class="d-none ps-lg-5 d-lg-grid mt-4">
-            <button class="btn main--button" data-bs-toggle="modal" data-bs-target="#tweetModal">Postear</button>
+            <button class="btn main--button" data-bs-toggle="modal" data-bs-target="#nuevopost">Postear</button>
           </div>
 
         <!--Account info-->
@@ -116,7 +116,7 @@
                   <span id="userBlog" class="fw-bold">MyName</span>
                 </div>
                 <div class="col-lg-12">
-                  <span id="userName" class="text--tweet-info">@usernametag</span>
+                  <span id="userName" class="text--tweet-info">@username</span>
                 </div>
               </div>
             </div>
@@ -133,7 +133,7 @@
         </header>
                 
         <!--Main section-->
-        <main class="col-12 col-sm-10 col-md-7 col-lg-5">
+        <main class="col-12 col-sm-10 col-md-10 col-lg-5">
                     <!--Logo Top (No sticky)-->
           <div class="row d-flex d-sm-none">
             <div class="col">
@@ -171,7 +171,7 @@
                       <span class="ps-3"><i class="bi bi-geo-alt"></i></span>
                     </div>
                     <div class="col-4 col-md-3 d-flex d-md-block">
-                      <button id="btnPostMain" class="btn main--button w-100">Postear</button>
+                      <button id="btnPostMain" class="btn main--button w-100" disabled>Postear</button>
                     </div>
                   </div>
                 </div>
@@ -187,7 +187,7 @@
                       <form method="POST" action="./Backend/files/newPost.php">
                         <div class="modal-body">
                           <div class="row">
-                            <div class="col-2 pt-2 text-end">
+                            <div class="col-2 pt-2">
                               <img src="./src/profile_sample.png" alt="" class="profile--pic">
                             </div>
                             <div class="col-10 pt-2">
@@ -206,7 +206,7 @@
                             <span class="ps-3"><i class="bi bi-geo-alt"></i></span>
                           </div>
                           <div class="col-3 d-flex d-md-block">
-                            <button id="btnPostMain" type="submit" class="btn btn-primary main--button w-100">
+                            <button id="btnPost" type="submit" class="btn btn-primary main--button w-100" disabled>
                               Postear
                             </button>
                           </div>
@@ -421,7 +421,7 @@
                             <div class="modal-body">
                               <!--Main Tweet-->
                               <div class="row">
-                                <div class="col-2 pt-2 text-center">
+                                <div class="col-2 pt-2">
                                   <img src="./src/profile_sample.png" alt="" class="profile--pic"/>
                                 </div>
                                 <div class="col-9 pe-0 pe-md-2 ">
@@ -444,7 +444,7 @@
                               </div>
                               <!--Tweet Response Area-->
                               <div class="row mt-3 tweet-response">
-                                <div class="col-2 pt-2 text-end">
+                                <div class="col-2 pt-2">
                                   <img src="./src/profile_sample.png" alt="" class="profile--pic">
                                 </div>
                                 <div class="col-10 pt-2">
@@ -478,9 +478,10 @@
               </template>       
             </div>
           </section>
-        </main>      
+        </main>    
+
         <!--Right Sidebar-->
-        <aside class="col-md-3 col-lg-4 d-none d-md-block w-25 h-25 right--sidebar">
+        <aside class="col-lg-4 d-none d-lg-block w-25 h-25 right--sidebar">
                     <div class="mt-2 search--bar ">
                         <i class="bi bi-search"></i>
                         <input type="text" class="form-control" placeholder="Buscar..." aria-label="Buscar">               
@@ -502,8 +503,35 @@
                     </div>
                     <div class="row mx-1 my-2 rounded-3 left--container">
                         <div class="col">
-                            <p class="fs-6 fw-bold">En directo en X</p>
-
+                            <p class="fs-6 fw-bold">A quién seguir</p>
+                            <div class="tofollow--item">
+                              <div class="row">
+                                  <div class="col-2">
+                                    <img class="rounded-circle" src="./src/tofollow_01.jpg" style="width: 36px; height: 36px;"/>
+                                  </div>
+                                  <div class="col-10 ps-lg-4 ps-xl-3">
+                                      <p class="m-0 text--headline">
+                                        Universidad de Guanajuato
+                                        <span><i class="bi bi-check-circle-fill"></i></span>
+                                      </p>
+                                      <p class="text--details">@UdeGuanajuato</p>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="tofollow--item">
+                              <div class="row">
+                                  <div class="col-2">
+                                    <img class="rounded-circle" src="./src/tofollow_02.png" style="width: 36px; height: 36px;"/>
+                                  </div>
+                                  <div class="col-10 ps-lg-4 ps-xl-3">
+                                      <p class="m-0 text--headline">
+                                        Xbox México
+                                        <span><i class="bi bi-check-circle-fill"></i></span>
+                                      </p>
+                                      <p class="text--details">@XboxMexico</p>
+                                  </div>
+                              </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row mx-1 my-2 rounded-3 left--container">
@@ -512,7 +540,7 @@
                             <div class="trending--item">
                                 <div class="row">
                                     <div class="col-9">
-                                        <p class="m-0 text--details">Tendencia en México</p>
+                                        <p class="m-0 text--details">Tendencia en Twitter</p>
                                     </div>
                                     <div class="col-3 text-end text--details">
                                         <span><i class="bi bi-three-dots pe-2"></i></span>
@@ -521,8 +549,8 @@
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <p class="text--headline mb-0">#Crazy Cars</p>
-                                        <p class="text--details">12.7 K Tweets</p>
+                                        <p class="text--headline mb-0">#GTAVI</p>
+                                        <p class="text--details">2.3 M Tweets</p>
                                     </div>
                                 </div>
                             </div>
@@ -538,7 +566,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <p class="text--headline mb-0">#Crazy Cars</p>
+                                        <p class="text--headline mb-0">#CrazyCars</p>
                                         <p class="text--details">12.7 K Tweets</p>
                                     </div>
                                 </div>
@@ -546,7 +574,7 @@
                             <div class="trending--item">
                                 <div class="row">
                                     <div class="col-9">
-                                        <p class="m-0 text--details">Tendencia en México</p>
+                                        <p class="m-0 text--details">Tendencia en el mundo</p>
                                     </div>
                                     <div class="col-3 text-end text--details">
                                         <span><i class="bi bi-three-dots pe-2"></i></span>
@@ -555,8 +583,8 @@
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <p class="text--headline mb-0">#Crazy Cars</p>
-                                        <p class="text--details">12.7 K Tweets</p>
+                                        <p class="text--headline mb-0">#2024</p>
+                                        <p class="text--details">125.7 K Tweets</p>
                                     </div>
                                 </div>
                             </div>
