@@ -46,7 +46,8 @@
     background-color: var(--light-bgcolor);
   }
   
-  .tweet--icons{
+  .tweet--icons,
+  .bi-check-circle-fill{
     color: var(--main-color);
   }
   
