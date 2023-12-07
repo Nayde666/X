@@ -4,10 +4,47 @@ const titulo = document.getElementById('userBlog')
 const nombre = document.getElementById('userName')
 const postContainer = document.getElementById('postUsuarios')
 
+const tweetMain = document.getElementById('tweetMain')
+const tweetArea = document.getElementById('tweetArea')
+const btnPost = document.getElementById('btnPost')
+
 const postCard = document.getElementById('cardPost').content
 const fragment = document.createDocumentFragment()
 
+tweetMain.addEventListener('input', () => {
+    let isEmpty = false
+
+    if(!tweetMain.value.trim()){
+        tweetMain.setAttribute('placeholder', '¡¿Qué está pasando?!')
+        isEmpty = true 
+    }
+    else{
+        tweetMain.removeAttribute('placeholder')
+    }
+    
+    btnPost.disabled = isEmpty
+
+})
+
+tweetArea.addEventListener('input', () => {
+    let isEmpty = false
+
+    if(!tweetArea.value.trim()){
+        tweetArea.setAttribute('placeholder', '¡¿Qué está pasando?!')
+        isEmpty = true 
+    }
+    else{
+        tweetArea.removeAttribute('placeholder')
+    }
+    
+    btnPost.disabled = isEmpty
+
+})
+
 document.addEventListener('DOMContentLoaded', () => {
+    tweetMain.value = ''
+    tweetArea.value = ''
+
     loadUser()
     loadPost()
 })
