@@ -92,7 +92,8 @@ p{
 
 .input{
     height: 70px;
-    background: transparent;
+    background: #000; 
+    color: white;
 }
 
 .input::placeholder{
@@ -101,7 +102,8 @@ p{
     color: rgb(136, 136, 136);
 }
 .input:focus{
-    background-color: transparent;
+    background-color: #000;
+    color: white;
 }
 
 input:invalid + button {
@@ -127,4 +129,28 @@ a{
     font-weight: 600;
     font-size: 20px;
     border-color: aliceblue;
+}
+
+.Modal2{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.modal-content {
+    max-height: 650px; /* Ajusta la altura máxima según tus necesidades */
+    overflow-y: auto;
+}
+
+a  {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.link-with-margin {
+    margin-bottom: 10px; /* Ajusta el valor según sea necesario */
 }
