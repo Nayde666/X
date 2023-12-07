@@ -1,0 +1,213 @@
+:root{
+    --main-color: #1DA1F2;
+    --secondary-color: #0084B4;
+    --light-bgcolor: #F5F8FA;
+
+    --gray-bgcolor: #E1E8ED;
+    --dark-bgcolor: #14171A; 
+    --gray-txtcolor: #657786;
+}
+
+* {
+    scrollbar-color: #555555 #ffffff; /* Cambia estos colores según tus preferencias */
+  }
+  
+  /* Cambiar el color de la pista */
+  * {
+    scrollbar-track-color: #ffffff; /* Cambia este color según tus preferencias */
+  }
+  
+  /* Cambiar el grosor del borde del pulgar */
+  * {
+    scrollbar-width: thin; /* Puedes usar 'thin', 'auto' o 'none' */
+  }
+
+body{
+    background-color: var(--light-bgcolor);
+    font-family: 'Roboto', sans-serif;
+    color: var(--dark-bgcolor);
+    overflow-x: hidden;
+}
+
+textarea:focus, input:focus, input:active{
+    outline: none;
+    box-shadow: none;
+}
+
+.btn:focus,
+.btn-close:focus{
+    box-shadow: none;
+}
+
+.tweet--area{
+    resize: none;
+    padding-left: 0;
+    width: 100%;
+    background-color: var(--light-bgcolor);
+}
+
+.tweet--icons{
+    color: var(--main-color);
+}
+
+.left--sidebar, .right--sidebar, .mid--topbar{
+    position: sticky;
+    top: 0px;
+    height: fit-content;
+
+}
+
+.nav-link{
+    color: var(--dark-bgcolor);
+}
+
+.nav-link:hover, 
+.bottom--navbar i:hover, 
+.tweet--content .text--tweet-info i:hover{
+    cursor: pointer;
+    color: var(--main-color);
+}
+
+.mid--topbar{
+    background-color: var(--light-bgcolor);
+}
+
+.profile--pic{
+    border-radius: 50%;
+    width: 56px; 
+    height: 56px;
+}
+
+.btn{
+    border: none;
+    border-radius: 50rem;
+    color: var(--light-bgcolor);
+    font-weight: bold;
+}
+
+.main--button{
+    padding: 12px 6px;
+    background-color: var(--main-color);
+    font-size: 14px;
+}
+
+.main--button:hover{
+    color: var(--light-bgcolor);
+    background-color: var(--secondary-color);
+}
+
+.secondary--button{
+    padding: 8px 6px;
+    background-color: var(--dark-bgcolor);
+    font-size: 12px;
+}
+
+.buttonregresar:hover{
+    cursor: pointer;
+}
+
+.search--bar{ 
+    position: relative;
+    width: 90%;
+    color: var(--hover-txtcolor);
+}
+
+.search--bar i{
+    position: absolute;
+    top: 50%;
+    left: 24px;
+    transform: translateY(-50%);
+    z-index: 1;
+    
+}
+
+.search--bar input{
+    padding-left: 56px;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--gray-bgcolor);
+}
+
+
+.search--bar input:focus{
+    outline: none;
+    background-color: var(--gray-bgcolor);
+}
+
+.left--container{
+    width: 90%;
+    padding: 12px 4px;
+    background-color: var(--gray-bgcolor);
+}
+
+.text--headline{
+    text-align: start;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.text--details{
+    text-align: start;
+    color: var(--gray-txtcolor);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.text--tweet-info{
+    color: var(--gray-txtcolor);
+}
+
+.account--info:hover{
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: var(--gray-bgcolor);
+}
+
+.account--options:hover{
+    cursor: pointer;
+}
+
+.account--options.dropdown-toggle::after{
+    display: none;
+}
+
+.card-text:hover{
+    cursor: pointer;
+}
+
+.modal-content{
+    background-color: var(--light-bgcolor);
+}
+
+.modal-body{
+
+    max-height: 440px;
+    overflow-y: auto;
+}
+
+.modal-header{
+    border-bottom: none;
+}
+
+.modal-header .btn-close{
+    margin-left: 0;
+}
+
+.modal-title{
+    padding: 0 .5rem 0 0;
+    color: var(--main-color);
+}
+
+.tweet-response{
+    position: sticky;
+    bottom: -1rem;
+    background-color: var(--light-bgcolor);
+
+}
+
+@media(max-width: 720px){
+    .tweet--circle-button,
+    .dropup .profile--pic{
+        margin-left: -1rem;
+    }
+}
